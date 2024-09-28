@@ -27,33 +27,40 @@
             text-align: center;
         }
 
-        /* Стилізація фото в рамці */
+        /* Стилізація фото в бароковій рамці */
         .photo-frame {
-            border: 15px solid #8B4513; /* Коричнева рамка, схожа на дерев'яну */
+            border: 20px solid transparent; /* Простір для барокової рамки */
             padding: 10px;
             background-color: white;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Тінь для створення об'єму */
+            position: relative;
         }
 
+        /* Барокова рамка з використанням псевдоелементів */
+        .photo-frame:before, .photo-frame:after {
+            content: "";
+            position: absolute;
+            border: 20px solid gold; /* Золотиста барокова рамка */
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            top: -20px;
+            left: -20px;
+            z-index: -1;
+        }
+
+        .photo-frame:before {
+            border-radius: 30px; /* Округлі кути для рамки */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тінь */
+        }
+
+        /* Зображення */
         .photo-frame img {
             max-width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Текст поверх фото */
-        .hero h1 {
-            color: #FFFFFF; /* Білий колір тексту */
-            font-size: 4em;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        /* Контейнер для контенту після заголовку */
+        /* Контейнер для контенту після фото */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -73,11 +80,10 @@
     </style>
 </head>
 <body>
-    <!-- Блок із фото і текстом -->
+    <!-- Блок із фото -->
     <div class="hero">
-        <h1>90-ті</h1>
         <div class="photo-frame">
-            <img src="https://cdn.segodnya.ua/i/image_1080x/media/image/5d4/c59/f0c/5d4c59f0cb413.png.webp" alt="Фото 90-х">
+            <img src="https://gdb.rferl.org/89f0bc61-6b9b-4d48-b66a-839386ef6708_w1023_s.jpg" alt="Фото 90-х">
         </div>
     </div>
 
