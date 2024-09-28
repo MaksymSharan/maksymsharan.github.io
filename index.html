@@ -7,15 +7,15 @@
     <style>
         body {
             font-family: 'Times New Roman', serif;
-            background-color: #000000; /* Чорний фон для основної частини */
             margin: 0;
             padding: 0;
-            color: #ffffff; /* Білий колір для тексту */
+            background-color: #f2f2f2; /* Світле тло для сторінки */
+            color: #333; /* Темний колір для тексту */
         }
 
         /* Фон у вигляді радянського килима */
         .hero {
-            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Ваш фон килима */
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
             background-size: cover;
             background-position: center;
             height: 100vh; /* Повна висота екрану */
@@ -26,86 +26,82 @@
             text-align: center;
         }
 
+        /* Зменшене фото з рамкою, щоб килим було видно */
         .photo-frame img {
-            max-width: 100%;
+            max-width: 50%; /* Фото займає половину ширини екрану */
             height: auto;
-            border: 15px solid white; /* Рамка для фото */
+            border: 10px solid white; /* Рамка для фото */
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Тінь для фото */
         }
 
-        /* Стиль контейнера для тексту */
+        /* Стиль для контейнера з текстом */
         .container {
-            max-width: 800px; /* Максимальна ширина контейнера */
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
-            margin: 0 auto;
-            background-color: #000; /* Чорний фон для тексту */
-            color: #fff; /* Білий колір тексту */
-            text-align: center;
+            background-color: #e0e0e0; /* Світле тло для тексту */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .text-section {
             margin-bottom: 20px;
             font-size: 20px;
             line-height: 1.6;
-            opacity: 0;
-            animation: fadeIn 3s ease forwards;
         }
 
-        /* Анімація для поступової появи тексту */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .highlight {
+            font-weight: bold; /* Жирний шрифт для виділеного тексту */
         }
 
         .title {
             font-size: 24px;
-            font-weight: bold;
             margin-top: 40px;
-            opacity: 0;
-            animation: fadeInTitle 4s ease forwards;
-        }
-
-        /* Анімація для заголовка */
-        @keyframes fadeInTitle {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            font-weight: normal; /* Простий шрифт для заголовка */
         }
 
         .author {
             font-size: 18px;
             font-style: italic;
             margin-top: 20px;
-            opacity: 0;
-            animation: fadeInAuthor 5s ease forwards;
+            font-weight: normal; /* Простий шрифт для автора */
         }
 
-        /* Анімація для автора */
-        @keyframes fadeInAuthor {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Фото під текстом з напівпрозорою плівкою */
+        .overlay-section {
+            position: relative;
+            max-width: 100%;
+            height: auto;
         }
+
+        .overlay-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозора плівка */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .overlay-text {
+            padding: 20px;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Блок із фото -->
+    <!-- Блок із фото та килимом -->
     <div class="hero">
         <div class="photo-frame">
             <img src="https://gdb.rferl.org/89f0bc61-6b9b-4d48-b66a-839386ef6708_w1023_s.jpg" alt="Фото 90-х">
@@ -115,19 +111,30 @@
     <!-- Контейнер з текстом -->
     <div class="container">
         <div class="text-section">
-            У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того перестав існувати.
+            У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
         </div>
         <div class="text-section">
-            «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитись на безпрецедентні дії.
+            «Чому це сталося?» – напевно що усі ми хоча б раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
         </div>
         <div class="text-section">
             Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинності.
         </div>
-        <div class="text-section">
+        <div class="text-section highlight">
             1990-ті – десятиліття, що могло бути іншим.
         </div>
 
         <div class="title">Лонгрід Максима Шарана</div>
     </div>
+
+    <!-- Фото з напівпрозорою плівкою -->
+    <div class="overlay-section">
+        <img src="https://gdb.rferl.org/413c6031-e079-47b3-a53f-95c268fd5eb3_w1080_h608.jpg" alt="Фото 1990-х">
+        <div class="overlay">
+            <div class="overlay-text">
+                Текст поверх фото з напівпрозорою плівкою
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
