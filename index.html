@@ -7,39 +7,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Press Start 2P', cursive; /* Ретро шрифт */
-            background-color: #000000; /* Чорний фон */
-            color: #ffffff; /* Білий текст */
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000000;
+            color: #ffffff;
             margin: 0;
             padding: 0;
             position: relative;
             overflow-x: hidden;
         }
 
+        /* Фон у вигляді радянського килима */
+        .hero {
+            background-image: url('https://i.pinimg.com/originals/25/11/d4/2511d4c1d1df65f0fb84f71c4993a85c.jpg'); /* Фон килима */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Повна висота екрану */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Стилізація фото в рамці */
+        .photo-frame {
+            border: 10px solid #ff00ff; /* Яскрава рамка навколо фото */
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Тінь для створення об'єму */
+        }
+
+        .photo-frame img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Текст поверх фото */
+        .hero h1 {
+            color: #00ff00; /* Неоново-зелений колір для тексту */
+            text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff; /* Неонові тіні */
+            font-size: 4em;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        /* Контейнер для контенту після заголовку */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #ff00ff, #00ffff); /* Градієнт */
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
             border: 5px solid #ff00ff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Тінь */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             min-height: 100vh;
-        }
-
-        h1, h2 {
-            color: #00ff00; /* Неоново-зелений заголовок */
-            text-align: center;
-            text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff; /* Яскраві тіні для заголовків */
-        }
-
-        .retro-box {
-            background-color: #000;
-            border: 3px solid #00ffff;
-            padding: 20px;
-            margin: 20px 0;
-            color: #ff00ff;
-            text-align: center;
-            font-size: 1.1em;
         }
 
         footer {
@@ -47,28 +71,20 @@
             color: #fff;
             text-align: center;
             padding: 10px;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
-
-        /* Декоративний фон з геометричними фігурами */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png');
-            opacity: 0.1;
-            z-index: -1;
         }
     </style>
 </head>
 <body>
+    <!-- Блок із фото і текстом -->
+    <div class="hero">
+        <h1>90-ті</h1>
+        <div class="photo-frame">
+            <img src="https://cdn.segodnya.ua/i/image_1080x/media/image/5d4/c59/f0c/5d4c59f0cb413.png.webp" alt="Фото 90-х">
+        </div>
+    </div>
+
+    <!-- Контейнер для додаткового контенту -->
     <div class="container">
-        <h1>Сайт про 90-ті</h1>
         <h2>Лонгрід у стилі ретро</h2>
         
         <div class="retro-box">
