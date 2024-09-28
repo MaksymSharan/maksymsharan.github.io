@@ -27,32 +27,6 @@
             text-align: center;
         }
 
-        /* Стилізація фото в бароковій рамці */
-        .photo-frame {
-            border: 20px solid transparent; /* Простір для барокової рамки */
-            padding: 10px;
-            background-color: white;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Тінь для створення об'єму */
-            position: relative;
-        }
-
-        /* Барокова рамка з використанням псевдоелементів */
-        .photo-frame:before, .photo-frame:after {
-            content: "";
-            position: absolute;
-            border: 20px solid gold; /* Золотиста барокова рамка */
-            width: calc(100% + 40px);
-            height: calc(100% + 40px);
-            top: -20px;
-            left: -20px;
-            z-index: -1;
-        }
-
-        .photo-frame:before {
-            border-radius: 30px; /* Округлі кути для рамки */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тінь */
-        }
-
         /* Зображення */
         .photo-frame img {
             max-width: 100%;
@@ -60,7 +34,7 @@
             display: block;
         }
 
-        /* Стиль для телевізора */
+        /* Стиль для телевізора "Рекорд В-312" */
         .tv-container {
             display: flex;
             justify-content: center;
@@ -71,7 +45,7 @@
             position: relative;
             width: 600px;
             height: 450px;
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3485/3485301.png'); /* Зображення радянського телевізора */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/Television_rekord_b-312.png'); /* Зображення телевізора "Рекорд В-312" */
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -79,10 +53,10 @@
 
         .tv-screen {
             position: absolute;
-            top: 15%;
-            left: 11%;
-            width: 78%;
-            height: 65%;
+            top: 18%;
+            left: 14%;
+            width: 72%;
+            height: 56%;
             background-color: #000;
         }
 
@@ -113,7 +87,7 @@
         </div>
     </div>
 
-    <!-- Блок із радянським телевізором -->
+    <!-- Блок із телевізором "Рекорд В-312" -->
     <div class="tv-container">
         <div class="tv-frame">
             <div class="tv-screen">
