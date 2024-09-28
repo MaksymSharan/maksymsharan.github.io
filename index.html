@@ -60,7 +60,33 @@
             display: block;
         }
 
-        /* Контейнер для контенту після фото */
+        /* Стиль для телевізора */
+        .tv-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+
+        .tv-frame {
+            position: relative;
+            width: 600px;
+            height: 450px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3485/3485301.png'); /* Зображення радянського телевізора */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .tv-screen {
+            position: absolute;
+            top: 15%;
+            left: 11%;
+            width: 78%;
+            height: 65%;
+            background-color: #000;
+        }
+
+        /* Контейнер для контенту після телевізора */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -84,6 +110,16 @@
     <div class="hero">
         <div class="photo-frame">
             <img src="https://gdb.rferl.org/89f0bc61-6b9b-4d48-b66a-839386ef6708_w1023_s.jpg" alt="Фото 90-х">
+        </div>
+    </div>
+
+    <!-- Блок із радянським телевізором -->
+    <div class="tv-container">
+        <div class="tv-frame">
+            <div class="tv-screen">
+                <!-- Тут буде відео -->
+                <!-- Ви зможете вставити відео пізніше -->
+            </div>
         </div>
     </div>
 
