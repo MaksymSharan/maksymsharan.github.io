@@ -7,29 +7,46 @@
     <style>
         body {
             font-family: 'Times New Roman', serif;
-            background-color: #f5f5f5; /* Світлий фон */
+            background-color: #000000; /* Чорний фон для основної частини */
             margin: 0;
             padding: 0;
+            color: #ffffff; /* Білий колір для тексту */
+        }
+
+        /* Фон у вигляді радянського килима */
+        .hero {
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Ваш фон килима */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Повна висота екрану */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Висота на весь екран */
+            position: relative;
             text-align: center;
-            color: #333; /* Нейтральний темний колір для тексту */
         }
 
+        .photo-frame img {
+            max-width: 100%;
+            height: auto;
+            border: 15px solid white; /* Рамка для фото */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Тінь для фото */
+        }
+
+        /* Стиль контейнера для тексту */
         .container {
             max-width: 800px; /* Максимальна ширина контейнера */
             padding: 20px;
-            background-color: #fff; /* Білий фон для тексту */
-            border: 1px solid #ccc; /* Легка рамка для тексту */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь для ефекту */
+            margin: 0 auto;
+            background-color: #000; /* Чорний фон для тексту */
+            color: #fff; /* Білий колір тексту */
+            text-align: center;
         }
 
         .text-section {
             margin-bottom: 20px;
             font-size: 20px;
-            line-height: 1.6; /* Відстань між рядками для читабельності */
+            line-height: 1.6;
             opacity: 0;
             animation: fadeIn 3s ease forwards;
         }
@@ -88,6 +105,14 @@
     </style>
 </head>
 <body>
+    <!-- Блок із фото -->
+    <div class="hero">
+        <div class="photo-frame">
+            <img src="https://gdb.rferl.org/89f0bc61-6b9b-4d48-b66a-839386ef6708_w1023_s.jpg" alt="Фото 90-х">
+        </div>
+    </div>
+
+    <!-- Контейнер з текстом -->
     <div class="container">
         <div class="text-section">
             У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того перестав існувати.
