@@ -28,7 +28,7 @@
 
         /* Прозорий текст на килимі */
         .hero-text {
-            background-color: rgba(192, 192, 192, 0.75); /* Світло-сірий фон з 75% прозорістю (видимість 25%) */
+            background-color: rgba(192, 192, 192, 0.75); /* Світло-сірий фон з 75% прозорістю */
             padding: 20px;
             border-radius: 10px;
             font-size: 28px;
@@ -37,30 +37,14 @@
             max-width: 70%;
         }
 
-        /* Контейнер для градієнтного переходу */
-        .transition {
-            height: 100px;
-            background: linear-gradient(to bottom, rgba(242, 242, 242, 0) 0%, rgba(242, 242, 242, 1) 100%); /* Плавний перехід від прозорого до світлого тла */
-        }
-
         /* Контейнер з текстом */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для тексту */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in; /* Плавний вхід */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         /* Стиль для імітації Телеграм-чату */
@@ -68,25 +52,30 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/81/2022_Russian_invasion_of_Ukraine.svg'); /* Задній фон телеграму */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff; /* Білий колір тексту */
         }
 
         .message {
-            background-color: #3b3b3b; /* Темно-сірий колір як базовий */
+            background-color: rgba(59, 59, 59, 0.8); /* Темно-сірий з 80% прозорістю */
             padding: 15px;
             border-radius: 10px;
             font-size: 18px;
             line-height: 1.6;
-            color: #eaeaea; /* Світлий колір тексту */
         }
 
         .message-left {
             align-self: flex-start;
-            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
+            background-color: rgba(90, 125, 90, 0.8); /* Камуфляжний зелений з прозорістю для лівого повідомлення */
         }
 
         .message-right {
             align-self: flex-end;
-            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
+            background-color: rgba(131, 104, 88, 0.8); /* Коричнево-оливковий з прозорістю для правого повідомлення */
         }
 
     </style>
@@ -100,10 +89,7 @@
         </div>
     </div>
 
-    <!-- Плавний перехід між блоками -->
-    <div class="transition"></div>
-
-    <!-- Контейнер з текстом -->
+    <!-- Контейнер з текстом і телеграм-чатом -->
     <div class="container">
         <!-- Телеграм-чат -->
         <div class="chat-container">
