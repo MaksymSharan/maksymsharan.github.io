@@ -13,33 +13,55 @@
             color: #333; /* Темний колір для тексту */
         }
 
-        /* Блок із фоном на повний екран */
+        /* Фон у вигляді радянського килима */
         .hero {
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/81/2022_Russian_invasion_of_Ukraine.svg'); /* Фонове зображення */
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
             background-size: cover;
             background-position: center;
-            width: 100vw; /* Повна ширина вікна */
-            height: 100vh; /* Повна висота вікна */
+            height: 100vh; /* Повна висота екрану */
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+            text-align: center;
         }
 
-        /* Контейнер для телеграм-чату поверх картинки */
+        /* Прозорий текст на килимі */
+        .hero-text {
+            background-color: rgba(192, 192, 192, 0.75); /* Світло-сірий фон з 75% прозорістю */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000; /* Чорний колір шрифту */
+            max-width: 70%;
+        }
+
+        /* Контейнер з текстом */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для тексту */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стиль для імітації Телеграм-чату */
         .chat-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/81/2022_Russian_invasion_of_Ukraine.svg'); /* Задній фон телеграму */
+            background-size: cover;
+            background-position: center;
             padding: 20px;
             border-radius: 10px;
-            max-width: 70%; /* Ширина блоку чату */
-            color: #fff; /* Білий текст */
+            color: #fff; /* Білий колір тексту */
         }
 
-        /* Окремі повідомлення в чаті */
         .message {
+            background-color: rgba(59, 59, 59, 0.8); /* Темно-сірий з 80% прозорістю */
             padding: 15px;
             border-radius: 10px;
             font-size: 18px;
@@ -48,20 +70,28 @@
 
         .message-left {
             align-self: flex-start;
-            background-color: rgba(90, 125, 90, 0.8); /* Камуфляжний зелений фон */
+            background-color: rgba(90, 125, 90, 0.8); /* Камуфляжний зелений з прозорістю для лівого повідомлення */
         }
 
         .message-right {
             align-self: flex-end;
-            background-color: rgba(131, 104, 88, 0.8); /* Коричнево-оливковий фон */
+            background-color: rgba(131, 104, 88, 0.8); /* Коричнево-оливковий з прозорістю для правого повідомлення */
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Блок із фоновим зображенням і накладеним телеграм-чатом -->
+    <!-- Блок із килимом і прозорим текстом -->
     <div class="hero">
+        <div class="hero-text">
+            1990-ті – десятиліття, що могло бути іншим.<br>Лонгрід Максима Шарана
+        </div>
+    </div>
+
+    <!-- Контейнер з текстом і телеграм-чатом -->
+    <div class="container">
+        <!-- Телеграм-чат -->
         <div class="chat-container">
             <div class="message message-left">
                 - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
