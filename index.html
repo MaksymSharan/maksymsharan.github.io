@@ -9,16 +9,16 @@
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2; /* Світле тло для сторінки */
-            color: #333; /* Темний колір для тексту */
+            background-color: #f2f2f2;
+            color: #333;
         }
 
         /* Фон у вигляді радянського килима */
         .hero {
-            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Повна висота екрану */
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,12 +28,12 @@
 
         /* Прозорий текст на килимі */
         .hero-text {
-            background-color: rgba(192, 192, 192, 0.90); /* Світло-сірий фон з 70% прозорістю (30% видимості) */
+            background-color: rgba(192, 192, 192, 0.90);
             padding: 20px;
             border-radius: 10px;
             font-size: 28px;
             font-weight: bold;
-            color: #000; /* Чорний колір шрифту */
+            color: #000;
             max-width: 70%;
         }
 
@@ -55,22 +55,65 @@
         }
 
         .message {
-            background-color: #3b3b3b; /* Темно-сірий колір як базовий */
+            background-color: #3b3b3b;
             padding: 15px;
             border-radius: 10px;
             font-size: 18px;
             line-height: 1.6;
-            color: #eaeaea; /* Світлий колір тексту */
+            color: #eaeaea;
         }
 
         .message-left {
             align-self: flex-start;
-            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
+            background-color: #5a7d5a;
         }
 
         .message-right {
             align-self: flex-end;
-            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
+            background-color: #836858;
+        }
+
+        /* Контейнер для секції, яка ділиться на дві частини */
+        .split-section {
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Ліва частина тексту */
+        .left-text-container {
+            width: 50%;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            box-sizing: border-box;
+        }
+
+        /* Права частина залишається порожньою */
+        .right-empty-container {
+            width: 50%;
+        }
+
+        /* Секція для зображення */
+        .image-section {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Стиль підпису під фото */
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
         }
 
     </style>
@@ -102,56 +145,20 @@
             </div>
         </div>
      </div>
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Текстова секція з лівим вирівнюванням</title>
-<style>
-    /* Загальний стиль сторінки */
-    body {
-        font-family: "Times New Roman", Times, serif;
-        margin: 0;
-        padding: 0;
-    }
 
-    /* Контейнер для секції, яка ділиться на дві частини */
-    .split-section {
-        display: flex;
-        width: 100%;
-        margin-top: 20px; /* Відступ зверху для відокремлення */
-    }
-
-    /* Ліва частина тексту */
-    .left-text-container {
-        width: 50%; /* Займає 50% ширини екрану */
-        padding: 20px;
-        font-size: 18px;
-        line-height: 1.5;
-        text-align: justify; /* Вирівнювання тексту за шириною */
-        box-sizing: border-box;
-    }
-
-    /* Права частина залишається порожньою */
-    .right-empty-container {
-        width: 50%;
-    }
-</style>
-</head>
-<body>
-
-<!-- Інші частини сайту, килим, телеграм-чат тощо -->
-
-<!-- Нова секція для тексту -->
-<div class="split-section">
-    <div class="left-text-container">
-        <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
+    <!-- Нова секція для тексту -->
+    <div class="split-section">
+        <div class="left-text-container">
+            <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
+        </div>
+        <div class="right-empty-container"></div>
     </div>
-    <div class="right-empty-container"></div>
-</div>
 
-<!-- Інші частини сайту -->
+    <!-- Секція для зображення на повну ширину -->
+    <div class="image-section">
+        <img src="https://img4.teletype.in/files/33/c5/33c57b7e-4320-4eaf-9ff1-7e45e7dc3f76.jpeg" alt="Історичне фото">
+        <div class="image-caption">Це фото є історичним та виконує роль суспільного надбання</div>
+    </div>
 
 </body>
 </html>
