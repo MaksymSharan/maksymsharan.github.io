@@ -10,8 +10,14 @@
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: #333; /* Темна тема */
-            color: #f2f2f2; /* Світлий текст */
+            background-color: #f2f2f2; /* Світла тема за замовчуванням */
+            color: #333;
+        }
+
+        /* Темна тема */
+        body.dark-mode {
+            background-color: #333;
+            color: #f2f2f2;
         }
 
         /* Блок із килимом */
@@ -27,15 +33,35 @@
             text-align: center;
         }
 
-        /* Прозорий текст на килимі */
+        /* Текст на килимі */
         .hero-text {
-            background-color: rgba(192, 192, 192, 0.90); /* Світло-сірий фон */
+            background-color: rgba(192, 192, 192, 0.90);
             padding: 20px;
             border-radius: 10px;
             font-size: 28px;
             font-weight: bold;
-            color: #000; /* Чорний колір шрифту */
+            color: #000;
             max-width: 70%;
+        }
+
+        /* Віджет для перемикання тем */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        body.dark-mode .theme-switch {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
         }
 
         /* Контейнер для чату */
@@ -47,31 +73,29 @@
         }
 
         .message {
-            background-color: #3b3b3b; /* Темний фон */
+            background-color: #3b3b3b;
             padding: 15px;
             border-radius: 10px;
             font-size: 18px;
             line-height: 1.6;
-            color: #eaeaea; /* Світлий текст */
+            color: #eaeaea;
         }
 
-        .message-left {
-            align-self: flex-start;
-            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
+        body.dark-mode .message {
+            background-color: #5a5a5a;
         }
 
-        .message-right {
-            align-self: flex-end;
-            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
-        }
-
-        /* Контейнер для заголовка */
+        /* Заголовок */
         .section-heading {
             text-align: center;
             font-size: 22px;
             margin-top: 20px;
             margin-bottom: 20px;
             font-weight: bold;
+            color: #333;
+        }
+
+        body.dark-mode .section-heading {
             color: #aaa;
         }
 
@@ -81,17 +105,17 @@
             line-height: 1.5;
             text-align: justify;
             max-width: 90%;
-            margin: 0 auto; /* Центрування тексту */
+            margin: 0 auto;
         }
 
-        /* Стиль для фото з відступами */
+        /* Фото з відступами */
         .full-width-image {
-            width: calc(100% - 4cm); /* Відступ 2 см з кожного боку */
-            margin: 20px 2cm; /* Верхній і нижній відступи, а також 2 см з боків */
+            width: calc(100% - 4cm);
+            margin: 20px 2cm;
             display: block;
         }
 
-        /* Адаптивний стиль для мобільних пристроїв */
+        /* Мобільна адаптація */
         @media (max-width: 768px) {
             .hero-text {
                 font-size: 20px;
@@ -111,7 +135,7 @@
             }
 
             .full-width-image {
-                width: 90%; /* Ширина фото для мобільних пристроїв */
+                width: 90%;
                 margin: 10px auto;
             }
         }
@@ -124,6 +148,7 @@
         <div class="hero-text">
             1990-ті – десятиліття, що могло бути иншим.<br>Лонгрід Максима Шарана
         </div>
+        <button class="theme-switch" onclick="toggleTheme()">Світла/Темна тема</button>
     </div>
 
     <!-- Контейнер з Телеграм-чатом -->
@@ -152,8 +177,15 @@
         <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
     </div>
 
-    <!-- Фото з відступами по краях -->
+    <!-- Фото з відступами -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/George_Bush_and_Mikhail_Gorbachev_sign_the_START_1991.jpg" alt="Підписання СНО-1" class="full-width-image">
-    
+
+    <script>
+        // Перемикання між світлою і темною темами
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
 </body>
 </html>
