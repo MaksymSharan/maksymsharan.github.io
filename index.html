@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лонгрід 90-ті</title>
     <style>
-        /* Темна тема для сторінки */
         body {
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e; /* Темний фон */
-            color: #eaeaea; /* Світлий колір тексту */
+            background-color: #f2f2f2; /* Світле тло для сторінки */
+            color: #333; /* Темний колір для тексту */
         }
 
         /* Фон у вигляді радянського килима */
         .hero {
-            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg');
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 100vh; /* Повна висота екрану */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,12 +28,12 @@
 
         /* Прозорий текст на килимі */
         .hero-text {
-            background-color: rgba(50, 50, 50, 0.9); /* Темний фон з прозорістю */
+            background-color: rgba(192, 192, 192, 0.90); /* Світло-сірий фон з прозорістю */
             padding: 20px;
             border-radius: 10px;
             font-size: 28px;
             font-weight: bold;
-            color: #ffffff; /* Світлий текст */
+            color: #000; /* Чорний колір шрифту */
             max-width: 70%;
         }
 
@@ -43,9 +42,9 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #2e2e2e; /* Темний фон */
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Стиль для імітації Телеграм-чату */
@@ -56,22 +55,22 @@
         }
 
         .message {
-            background-color: #3b3b3b;
+            background-color: #3b3b3b; /* Темно-сірий колір як базовий */
             padding: 15px;
             border-radius: 10px;
             font-size: 18px;
             line-height: 1.6;
-            color: #eaeaea;
+            color: #eaeaea; /* Світлий колір тексту */
         }
 
         .message-left {
             align-self: flex-start;
-            background-color: #5a7d5a;
+            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
         }
 
         .message-right {
             align-self: flex-end;
-            background-color: #836858;
+            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
         }
 
         /* Контейнер для секції, яка ділиться на дві частини */
@@ -83,42 +82,26 @@
 
         /* Ліва частина тексту */
         .left-text-container {
-            width: 50%;
+            width: 50%; /* Займає 50% ширини екрану */
             padding: 20px;
             font-size: 18px;
             line-height: 1.5;
-            text-align: center;
-            margin: 0 auto;
+            text-align: justify; /* Вирівнювання тексту за шириною */
             box-sizing: border-box;
         }
 
-        /* Центрування тексту */
-        .left-text-container p {
-            margin: 0 20px;
-            text-align: justify;
+        /* Права частина залишається порожньою */
+        .right-empty-container {
+            width: 50%;
         }
 
-        /* Секція для зображення */
-        .image-section {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .image-section img {
+        /* Зображення на повну ширину */
+        .full-width-image {
             width: 100%;
             height: auto;
             display: block;
+            margin-top: 20px; /* Відступ зверху */
         }
-
-        /* Стиль підпису під фото */
-        .image-caption {
-            font-size: 14px;
-            color: #ccc;
-            text-align: center;
-            font-style: italic;
-            margin-top: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -147,7 +130,7 @@
                 - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
             </div>
         </div>
-     </div>
+    </div>
 
     <!-- Нова секція для тексту -->
     <div class="split-section">
@@ -156,11 +139,8 @@
         </div>
     </div>
 
-    <!-- Секція для зображення на повну ширину -->
-    <div class="image-section">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/George_Bush_and_Mikhail_Gorbachev_sign_the_START_1991.jpg" alt="Історичне фото підписання СНО-1">
-        <div class="image-caption">Джордж Буш і Михайло Горбачов підписують договір СНО-1 у 1991 році</div>
-    </div>
+    <!-- Зображення на повну ширину -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/George_Bush_and_Mikhail_Gorbachev_sign_the_START_1991.jpg" alt="Джордж Буш і Михайло Горбачов підписують договір СНО-1" class="full-width-image">
 
 </body>
 </html>
