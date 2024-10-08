@@ -9,6 +9,152 @@
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
+            background-color: #f2f2f2; /* Світле тло для сторінки */
+            color: #333; /* Темний колір для тексту */
+        }
+
+        /* Фон у вигляді радянського килима */
+        .hero {
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Повна висота екрану */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Прозорий текст на килимі */
+        .hero-text {
+            background-color: rgba(192, 192, 192, 0.90); /* Світло-сірий фон з прозорістю */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000; /* Чорний колір шрифту */
+            max-width: 70%;
+        }
+
+        /* Контейнер з текстом */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стиль для імітації Телеграм-чату */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            background-color: #3b3b3b; /* Темно-сірий колір як базовий */
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #eaeaea; /* Світлий колір тексту */
+        }
+
+        .message-left {
+            align-self: flex-start;
+            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
+        }
+
+        .message-right {
+            align-self: flex-end;
+            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
+        }
+
+        /* Контейнер для секції, яка ділиться на дві частини */
+        .split-section {
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Ліва частина тексту */
+        .left-text-container {
+            width: 50%; /* Займає 50% ширини екрану */
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify; /* Вирівнювання тексту за шириною */
+            box-sizing: border-box;
+        }
+
+        /* Права частина залишається порожньою */
+        .right-empty-container {
+            width: 50%;
+        }
+
+        /* Зображення на повну ширину */
+        .full-width-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px; /* Відступ зверху */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Блок із килимом і прозорим текстом -->
+    <div class="hero">
+        <div class="hero-text">
+            1990-ті – десятиліття, що могло бути иншим.<br>Лонгрід Максима Шарана
+        </div>
+    </div>
+
+    <!-- Контейнер з текстом -->
+    <div class="container">
+        <!-- Телеграм-чат -->
+        <div class="chat-container">
+            <div class="message message-left">
+                - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
+            </div>
+            <div class="message message-right">
+                - «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
+            </div>
+            <div class="message message-left">
+                - Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинності.
+            </div>
+            <div class="message message-right">
+                - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
+            </div>
+        </div>
+    </div>
+
+    <!-- Нова секція для тексту -->
+    <div class="split-section">
+        <div class="left-text-container">
+            <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
+        </div>
+    </div>
+
+    <!-- Зображення на повну ширину -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/George_Bush_and_Mikhail_Gorbachev_sign_the_START_1991.jpg" alt="Джордж Буш і Михайло Горбачов підписують договір СНО-1" class="full-width-image">
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лонгрід 90-ті</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
             background-color: #333; /* Темна тема */
             color: #f2f2f2; /* Світлий текст */
         }
