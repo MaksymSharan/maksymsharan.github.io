@@ -210,6 +210,36 @@ body.dark-mode .photo-caption {
             - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
         </div>
     </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зображення на всю ширину</title>
+    <style>
+        /* Стиль для зображення */
+        img.full-width-image {
+            width: calc(100% - 4cm); /* Загальна ширина з відступами 2 см з кожного боку */
+            margin: 0 2cm; /* Відступи по 2 см зліва і справа */
+            display: block; /* Вирівнює зображення по центру */
+            max-width: 100%; /* Забезпечує адаптивність зображення */
+            height: auto; /* Зберігає пропорції */
+        }
+        
+        /* Адаптація для мобільних пристроїв */
+        @media (max-width: 600px) {
+            img.full-width-image {
+                margin: 0 1cm; /* Зменшення відступів на мобільних */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image" class="full-width-image">
+
+</body>
+</html>
 
     <!-- Заголовок -->
     <div class="section-heading">
