@@ -3,110 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зображення з текстом та підписом</title>
+    <title>Лонгрід 90-ті</title>
     <style>
-        /* Основний стиль для сторінки */
         body {
+            font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Світла тема за замовчуванням */
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #f2f2f2; /* Світле тло для сторінки */
+            color: #333; /* Темний колір для тексту */
         }
 
-        /* Стиль для тексту з відступами */
-        .content {
-            margin-left: 4cm;
-            margin-right: 4cm;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-
-        /* Стиль для зображення */
-        .full-width-image {
-            width: calc(100% - 8cm); /* Зображення з відступами по 4 см з кожного боку */
-            margin: 20px 4cm 0 4cm;
-            display: block;
-            height: auto;
-            max-width: 100%;
-            transition: filter 0.3s, box-shadow 0.3s;
-            box-shadow: inset 0px -30px 50px rgba(0, 0, 0, 0.7); /* Ефект затемнення зверху */
-        }
-
-        /* Кінематографічний ефект */
-        .dark-theme .full-width-image,
-        .full-width-image {
-            filter: brightness(0.9); /* Легке затемнення для ефекту кінематографічності */
-            box-shadow: inset 0px -30px 50px rgba(0, 0, 0, 0.7); /* Затемнення країв */
-        }
-
-        /* Стиль для підпису зображення */
-        .image-caption {
-            margin-left: 4cm;
-            margin-right: 4cm;
-            font-size: 0.9em;
-            font-style: italic;
-            color: #666;
+        /* Фон у вигляді радянського килима */
+        .hero {
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg'); /* Килим */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Повна висота екрану */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
             text-align: center;
         }
 
-        /* Темна тема */
-        .dark-theme {
-            background-color: #121212;
-            color: #e0e0e0;
+        /* Прозорий текст на килимі */
+        .hero-text {
+            background-color: rgba(192, 192, 192, 0.90); /* Світло-сірий фон з 70% прозорістю (30% видимості) */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000; /* Чорний колір шрифту */
+            max-width: 70%;
         }
 
-        /* Стиль для кнопки перемикання теми */
-        .theme-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
+        /* Контейнер з текстом */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Адаптація для мобільних пристроїв */
-        @media (max-width: 600px) {
-            .content, .full-width-image, .image-caption {
-                margin-left: 1cm;
-                margin-right: 1cm;
-            }
+        /* Стиль для імітації Телеграм-чату */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
+
+        .message {
+            background-color: #3b3b3b; /* Темно-сірий колір як базовий */
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #eaeaea; /* Світлий колір тексту */
+        }
+
+        .message-left {
+            align-self: flex-start;
+            background-color: #5a7d5a; /* Камуфляжний зелений для лівого повідомлення */
+        }
+
+        .message-right {
+            align-self: flex-end;
+            background-color: #836858; /* Коричнево-оливковий для правого повідомлення */
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Кнопка для перемикання теми -->
-    <button class="theme-toggle" onclick="toggleTheme()">Темна/Світла Тема</button>
-
-    <!-- Текст із відступом -->
-    <div class="content">
-        У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання Верховної Ради УРСР. Того ж таки року він очолює одну з 23 комісій парламенту: комісію у закордонних справах. Саме там, на одному з перших засідань, Павличко уперше заговорить про певний дещо специфічний принцип зовнішньополітичних відносин: Україна повинна бути нейтральною державою. Тобто, серед иншого, не вступати у будь-які військові блоки.
+    <!-- Блок із килимом і прозорим текстом -->
+    <div class="hero">
+        <div class="hero-text">
+            1990-ті – десятиліття, що могло бути иншим.<br>Лонгрід Максима Шарана
+        </div>
     </div>
 
-    <!-- Зображення з кінематографічним ефектом -->
-    <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image" class="full-width-image">
+    <!-- Контейнер з текстом -->
+    <div class="container">
+        <!-- Телеграм-чат -->
+        <div class="chat-container">
+            <div class="message message-left">
+                - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
+            </div>
+            <div class="message message-right">
+                - «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
+            </div>
+            <div class="message message-left">
+                - Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинності.
+            </div>
+            <div class="message message-right">
+                - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
+            </div>
+        </div>
+     </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Текстова секція з лівим вирівнюванням</title>
+<style>
+    /* Загальний стиль сторінки */
+    body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+    }
 
-    <!-- Підпис до зображення -->
-    <div class="image-caption">Зображення згенероване Microsoft Designer</div>
+    /* Контейнер для секції, яка ділиться на дві частини */
+    .split-section {
+        display: flex;
+        width: 100%;
+        margin-top: 20px; /* Відступ зверху для відокремлення */
+    }
 
-    <!-- Продовження тексту -->
-    <div class="content">
-        <h2>Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" у 1990-тих</h2>
-        <p>А вже з червня по липень українські парламентарі активно обговорюють прийняття Декларації про державний суверенітет. Остаточний чинний варіант тексту документа прийняли 16 липня 1990 року. Дмитро Павличко на той час був вельми впливовою політичною фігурою і посилаючись на його «доктрину» депутати дописали у тексті Декларації своє бачення майбутнього України.</p>
+    /* Ліва частина тексту */
+    .left-text-container {
+        width: 50%; /* Займає 50% ширини екрану */
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: justify; /* Вирівнювання тексту за шириною */
+        box-sizing: border-box;
+    }
+
+    /* Права частина залишається порожньою */
+    .right-empty-container {
+        width: 50%;
+    }
+</style>
+</head>
+<body>
+
+<!-- Інші частини сайту, килим, телеграм-чат тощо -->
+
+<!-- Нова секція для тексту -->
+<div class="split-section">
+    <div class="left-text-container">
+        <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
     </div>
+    <div class="right-empty-container"></div>
+</div>
 
-    <script>
-        // Функція для перемикання теми
-        function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
-        }
-    </script>
+<!-- Інші частини сайту -->
 
 </body>
 </html>
