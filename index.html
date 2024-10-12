@@ -3,258 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лонгрід 90-ті</title>
+    <title>Зображення з текстом та підписом</title>
     <style>
-        /* Основний стиль сторінки */
+        /* Основний стиль для сторінки */
         body {
-            font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Світла тема за замовчуванням */
             color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Стиль для тексту з відступами */
+        .content {
+            margin-left: 4cm;
+            margin-right: 4cm;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Стиль для зображення */
+        .full-width-image {
+            width: calc(100% - 8cm); /* Зображення з відступами по 4 см з кожного боку */
+            margin: 20px 4cm 0 4cm;
+            display: block;
+            height: auto;
+            max-width: 100%;
+            transition: filter 0.3s, box-shadow 0.3s;
+            box-shadow: inset 0px -30px 50px rgba(0, 0, 0, 0.7); /* Ефект затемнення зверху */
+        }
+
+        /* Кінематографічний ефект */
+        .dark-theme .full-width-image,
+        .full-width-image {
+            filter: brightness(0.9); /* Легке затемнення для ефекту кінематографічності */
+            box-shadow: inset 0px -30px 50px rgba(0, 0, 0, 0.7); /* Затемнення країв */
+        }
+
+        /* Стиль для підпису зображення */
+        .image-caption {
+            margin-left: 4cm;
+            margin-right: 4cm;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #666;
+            text-align: center;
         }
 
         /* Темна тема */
-        body.dark-mode {
-            background-color: #333;
-            color: #f2f2f2;
+        .dark-theme {
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
-        /* Блок із килимом */
-        .hero {
-            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            text-align: center;
-        }
-
-        /* Текст на килимі */
-        .hero-text {
-            background-color: rgba(192, 192, 192, 0.90);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #000;
-            max-width: 70%;
-        }
-
-        /* Віджет для перемикання тем */
-        .theme-switch {
+        /* Стиль для кнопки перемикання теми */
+        .theme-toggle {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
             border: none;
             border-radius: 5px;
+            background-color: #333;
+            color: #fff;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
         }
 
-        body.dark-mode .theme-switch {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #333;
-        }
-
-        /* Стиль для чату */
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 20px;
-        }
-
-        /* Ліві повідомлення */
-        .message-left {
-            align-self: flex-start;
-            background-color: #5a5a5a;
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 80%;
-        }
-
-        /* Праві повідомлення */
-        .message-right {
-            align-self: flex-end;
-            background-color: #836858;
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 80%;
-        }
-
-        /* Темна тема для чату */
-        body.dark-mode .message-left {
-            background-color: #d3d3d3;
-            color: #333;
-        }
-        body.dark-mode .message-right {
-            background-color: #b0a090;
-            color: #333;
-        }
-
-        /* Заголовок */
-        .section-heading {
-            text-align: center;
-            font-size: 22px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        body.dark-mode .section-heading {
-            color: #aaa;
-        }
-
-        /* Основний текст */
-        .left-text-container {
-            font-size: 18px;
-            line-height: 1.5;
-            text-align: justify;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        /* Фото з відступами */
-        .full-width-image {
-            width: calc(100% - 4cm);
-            margin: 20px 2cm;
-            display: block;
-        }
-
-        /* Підпис під фото */
-.photo-caption {
-    font-size: 16px;
-    font-style: italic;
-    text-align: left;
-    margin-left: 2cm;
-    margin-right: 2cm;
-    color: #666; /* колір у світлій темі */
-}
-
-/* Підпис під фото в темній темі */
-body.dark-mode .photo-caption {
-    color: #f2f2f2; /* білий колір у темній темі */
-}
-
-        }
-
-        /* Мобільна адаптація */
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: 20px;
-                padding: 15px;
-            }
-
-            .message-left, .message-right {
-                font-size: 16px;
-            }
-
-            .section-heading {
-                font-size: 20px;
-            }
-
-            .left-text-container {
-                font-size: 16px;
-            }
-
-            .full-width-image {
-                width: 90%;
-                margin: 10px auto;
-            }
-
-            .photo-caption {
-                font-size: 14px;
-                margin: 10px auto;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Блок із килимом і прозорим текстом -->
-    <div class="hero">
-        <div class="hero-text">
-            1990-ті – десятиліття, що могло бути иншим.<br>Лонгрід Максима Шарана
-        </div>
-        <button class="theme-switch" onclick="toggleTheme()">Світла/Темна тема</button>
-    </div>
-
-    <!-- Контейнер з Телеграм-чатом -->
-    <div class="chat-container">
-        <div class="message-left">
-            - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
-        </div>
-        <div class="message-right">
-            - «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
-        </div>
-        <div class="message-left">
-            - Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинності.
-        </div>
-        <div class="message-right">
-            - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
-        </div>
-    </div>
-
-    <!-- Заголовок -->
-    <div class="section-heading">
-        Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" дев'яностих
-    </div>
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зображення на всю ширину</title>
-    <style>
-        /* Стиль для зображення */
-        img.full-width-image {
-            width: calc(100% - 4cm); /* Загальна ширина з відступами 2 см з кожного боку */
-            margin: 0 2cm; /* Відступи по 2 см зліва і справа */
-            display: block; /* Вирівнює зображення по центру */
-            max-width: 100%; /* Забезпечує адаптивність зображення */
-            height: auto; /* Зберігає пропорції */
-        }
-        
         /* Адаптація для мобільних пристроїв */
         @media (max-width: 600px) {
-            img.full-width-image {
-                margin: 0 1cm; /* Зменшення відступів на мобільних */
+            .content, .full-width-image, .image-caption {
+                margin-left: 1cm;
+                margin-right: 1cm;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Кнопка для перемикання теми -->
+    <button class="theme-toggle" onclick="toggleTheme()">Темна/Світла Тема</button>
+
+    <!-- Текст із відступом -->
+    <div class="content">
+        У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання Верховної Ради УРСР. Того ж таки року він очолює одну з 23 комісій парламенту: комісію у закордонних справах. Саме там, на одному з перших засідань, Павличко уперше заговорить про певний дещо специфічний принцип зовнішньополітичних відносин: Україна повинна бути нейтральною державою. Тобто, серед иншого, не вступати у будь-які військові блоки.
+    </div>
+
+    <!-- Зображення з кінематографічним ефектом -->
     <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image" class="full-width-image">
 
-</body>
-</html>
+    <!-- Підпис до зображення -->
+    <div class="image-caption">Зображення згенероване Microsoft Designer</div>
 
-    <!-- Основний текст -->
-    <div class="left-text-container">
-        <p> У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання Верховної Ради УРСР. Того ж таки року він очолює одну з 23 комісій парламенту: комісію у закордонних справах. Саме там, на одному з перших засідань, Павличко уперше заговорить про певний дещо специфічний принцип зовнішньополітичних відносин: Україна повинна бути нейтральною державою. Тобто, серед иншого, не вступати у будь-які військові блоки. А вже з червня по липень українські парламентарі активно обговорюють прийняття Декларації про державний суверенітет. Остаточний, чинний варіант тексту документа прийняли 16 липня 1990 року. Дмитро Павличко на той час був вельми впливовою політичною фігурою і посилаючись на його «доктрину» депутати дописали у тексті Декларації своє бачення майбутнього України.</p>
+    <!-- Продовження тексту -->
+    <div class="content">
+        <h2>Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" у 1990-тих</h2>
+        <p>А вже з червня по липень українські парламентарі активно обговорюють прийняття Декларації про державний суверенітет. Остаточний чинний варіант тексту документа прийняли 16 липня 1990 року. Дмитро Павличко на той час був вельми впливовою політичною фігурою і посилаючись на його «доктрину» депутати дописали у тексті Декларації своє бачення майбутнього України.</p>
     </div>
 
     <script>
-        // Перемикання між світлою і темною темами
+        // Функція для перемикання теми
         function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('dark-theme');
         }
     </script>
 
