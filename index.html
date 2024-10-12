@@ -44,19 +44,66 @@
             max-width: 70%;
         }
 
-        /* Відступи для основного тексту */
-        .left-text-container {
-            font-size: 18px;
-            line-height: 1.5;
-            text-align: justify;
-            margin-left: 4cm; /* Відступ 4 см зліва */
-            margin-right: 4cm; /* Відступ 4 см справа */
-            max-width: calc(100% - 8cm); /* Обмеження ширини для забезпечення відступів */
+        /* Віджет для перемикання тем */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        /* Темна тема для тексту */
-        body.dark-mode .left-text-container {
-            color: #aaa;
+        body.dark-mode .theme-switch {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        /* Стиль для чату */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        /* Ліві повідомлення */
+        .message-left {
+            align-self: flex-start;
+            background-color: #5a5a5a;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+
+        /* Праві повідомлення */
+        .message-right {
+            align-self: flex-end;
+            background-color: #836858;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+
+        /* Темна тема для чату */
+        body.dark-mode .message-left {
+            background-color: #d3d3d3;
+            color: #333;
+        }
+        body.dark-mode .message-right {
+            background-color: #b0a090;
+            color: #333;
         }
 
         /* Заголовок */
@@ -69,17 +116,71 @@
             color: #333;
         }
 
-        /* Темна тема для заголовка */
         body.dark-mode .section-heading {
             color: #aaa;
         }
 
+        /* Основний текст */
+        .left-text-container {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Фото з відступами */
+        .full-width-image {
+            width: calc(100% - 4cm);
+            margin: 20px 2cm;
+            display: block;
+        }
+
+/* Підпис під фото */
+.photo-caption {
+    font-size: 16px;
+    font-style: italic;
+    text-align: left;
+    margin-left: 2cm;
+    margin-right: 2cm;
+    color: #666; /* колір у світлій темі */
+}
+
+/* Підпис під фото в темній темі */
+body.dark-mode .photo-caption {
+    color: #f2f2f2; /* білий колір у темній темі */
+}
+
+        }
+
         /* Мобільна адаптація */
         @media (max-width: 768px) {
+            .hero-text {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .message-left, .message-right {
+                font-size: 16px;
+            }
+
+            .section-heading {
+                font-size: 20px;
+            }
+
             .left-text-container {
-                margin-left: 1cm; /* Зменшення відступів на мобільних пристроях */
-                margin-right: 1cm;
-                max-width: calc(100% - 2cm);
+                font-size: 16px;
+            }
+
+            .full-width-image {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .photo-caption {
+                font-size: 14px;
+                margin: 10px auto;
+                text-align: center;
             }
         }
     </style>
@@ -94,19 +195,66 @@
         <button class="theme-switch" onclick="toggleTheme()">Світла/Темна тема</button>
     </div>
 
+    <!-- Контейнер з Телеграм-чатом -->
+    <div class="chat-container">
+        <div class="message-left">
+            - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
+        </div>
+        <div class="message-right">
+            - «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
+        </div>
+        <div class="message-left">
+            - Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинности.
+        </div>
+        <div class="message-right">
+            - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
+        </div>
+    </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зображення на всю ширину</title>
+    <style>
+        /* Стиль для зображення */
+        img.full-width-image {
+            width: calc(100% - 4cm); /* Загальна ширина з відступами 2 см з кожного боку */
+            margin: 0 2cm; /* Відступи по 2 см зліва і справа */
+            display: block; /* Вирівнює зображення по центру */
+            max-width: 100%; /* Забезпечує адаптивність зображення */
+            height: auto; /* Зберігає пропорції */
+        }
+        
+        /* Адаптація для мобільних пристроїв */
+        @media (max-width: 600px) {
+            img.full-width-image {
+                margin: 0 1cm; /* Зменшення відступів на мобільних */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image" class="full-width-image">
+ <div class="photo-caption">Зображення згенероване Microsoft Designer</div>
+</body>
+</html>
+
     <!-- Заголовок -->
     <div class="section-heading">
-        Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" дев'яностих
+        Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" 1990-тих
     </div>
 
-    <!-- Основний текст з відступами -->
-    <div class="left-text-container">
-        <p>У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання Верховної Ради УРСР. Того ж таки року він очолює одну з 23 комісій парламенту: комісію у закордонних справах. Саме там, на одному з перших засідань, Павличко уперше заговорить про певний дещо специфічний принцип зовнішньополітичних відносин: Україна повинна бути нейтральною державою. Тобто, серед иншого, не вступати у будь-які військові блоки. А вже з червня по липень українські парламентарі активно обговорюють прийняття Декларації про державний суверенітет. Остаточний, чинний варіант тексту документа прийняли 16 липня 1990 року. Дмитро Павличко на той час був вельми впливовою політичною фігурою і посилаючись на його «доктрину» депутати дописали у тексті Декларації своє бачення майбутнього України.
- </p>
+    <!-- Основний текст -->
+<div class="left-text-container">
+        <p> У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання Верховної Ради УРСР. Того ж таки року він очолює одну з 23 комісій парламенту: комісію у закордонних справах. Саме там, на одному з перших засідань, Павличко уперше заговорить про певний дещо специфічний принцип зовнішньополітичних відносин: Україна повинна бути нейтральною державою. Тобто, серед иншого, не вступати у будь-які військові блоки. А вже з червня по липень українські парламентарі активно обговорюють прийняття Декларації про державний суверенітет. Остаточний, чинний варіант тексту документа прийняли 16 липня 1990 року. Дмитро Павличко на той час був вельми впливовою політичною фігурою і посилаючись на його «доктрину» депутати дописали у тексті Декларації своє бачення майбутнього України.</p>
     </div>
+    }
+}
 
     <script>
-        // Функція для перемикання між світлою та темною темами
+        // Перемикання між світлою і темною темами
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
         }
