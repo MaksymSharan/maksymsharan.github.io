@@ -3,134 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1990-ті – десятиліття, що могло бути иншим</title>
+    <title>Лонгрід 90-ті</title>
     <style>
-        /* Базові стилі для світлої теми */
+        /* Основний стиль сторінки */
         body {
-            background-color: #f8f9fa;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
             color: #333;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        h1, h2 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* Радянський килим */
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-image: url('https://maksymsharan.github.io/carpet.png');
-            background-size: cover;
-            color: #fff;
-        }
-
-        /* Перемикач теми */
-        .theme-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #fff;
-            border: none;
-            border-radius: 15px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* Стилі для телеграм-розмови */
-        .telegram-convo {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        /* Стилі для зображень */
-        .image-container {
-            margin: 20px auto;
-            width: calc(100% - 4cm);
-            padding: 2cm;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            transition: filter 0.3s;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-style: italic;
-            font-size: 0.9em;
-            color: #666;
         }
 
         /* Темна тема */
-        .dark-theme {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        .dark-theme .header {
-            color: #ffeb3b;
-        }
-        .dark-theme .telegram-convo {
-            background-color: #1a1a1a;
-            color: #d1d1d1;
-        }
-        .dark-theme .image-container img {
-            filter: brightness(0.7);
+        body.dark-mode {
+            background-color: #333;
+            color: #f2f2f2;
         }
 
-        /* Адаптивність */
-        @media (max-width: 600px) {
-            .image-container {
-                width: calc(100% - 2cm);
-                padding: 1cm;
+        /* Блок із килимом */
+        .hero {
+            background-image: url('https://patrioty.org.ua/images/2021/05/12210000_12_large.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Текст на килимі */
+        .hero-text {
+            background-color: rgba(192, 192, 192, 0.90);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            max-width: 70%;
+        }
+
+        /* Віджет для перемикання тем */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        body.dark-mode .theme-switch {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        /* Стиль для чату */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        /* Ліві повідомлення */
+        .message-left {
+            align-self: flex-start;
+            background-color: #5a5a5a;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+
+        /* Праві повідомлення */
+        .message-right {
+            align-self: flex-end;
+            background-color: #836858;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+
+        /* Темна тема для чату */
+        body.dark-mode .message-left {
+            background-color: #d3d3d3;
+            color: #333;
+        }
+        body.dark-mode .message-right {
+            background-color: #b0a090;
+            color: #333;
+        }
+
+        /* Заголовок */
+        .section-heading {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        body.dark-mode .section-heading {
+            color: #aaa;
+        }
+
+        /* Основний текст */
+        .left-text-container {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Фото з відступами */
+        .full-width-image {
+            width: calc(100% - 4cm);
+            margin: 20px 2cm;
+            display: block;
+        }
+
+        /* Підпис під фото */
+        .photo-caption {
+            font-size: 16px;
+            font-style: italic;
+            text-align: left;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            color: #666;
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .message-left, .message-right {
+                font-size: 16px;
+            }
+
+            .section-heading {
+                font-size: 20px;
+            }
+
+            .left-text-container {
+                font-size: 16px;
+            }
+
+            .full-width-image {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .photo-caption {
+                font-size: 14px;
+                margin: 10px auto;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Перемикач теми -->
-    <button class="theme-toggle" onclick="toggleTheme()">Темна/Світла Тема</button>
-
-    <!-- Килим з надписом -->
-    <div class="header">
-        <h1>1990-ті – десятиліття, що могло бути иншим</h1>
-        <p>Лонгрід Максима Шарана</p>
+    <!-- Блок із килимом і прозорим текстом -->
+    <div class="hero">
+        <div class="hero-text">
+            1990-ті – десятиліття, що могло бути иншим.<br>Лонгрід Максима Шарана
+        </div>
+        <button class="theme-switch" onclick="toggleTheme()">Світла/Темна тема</button>
     </div>
 
-    <!-- Телеграм-розмова -->
-    <div class="telegram-convo">
-        У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну...
+    <!-- Контейнер з Телеграм-чатом -->
+    <div class="chat-container">
+        <div class="message-left">
+            - У четвер 24 лютого 2022 року о 03:40 росія розпочала повномасштабне вторгнення в Україну. Світ, який ми знали до того, – перестав існувати.
+        </div>
+        <div class="message-right">
+            - «Чому це сталося?» – напевно що усі ми хоча би раз задавали собі це запитання. Насправді відповіді немає, але є те, що допомогло ворогові наважитися на безпрецедентні дії.
+        </div>
+        <div class="message-left">
+            - Цей день для росії став початком кінця, а для України – початком переусвідомлення своєї історії та винесення важливих уроків. Представляємо вашій увазі 1990-ті – десятиліття великих приватизацій, стометрових черг, невиплат зарплат та злочинності.
+        </div>
+        <div class="message-right">
+            - Спробуймо розібратися: "Чому ми там, де ми є?" і "Що робити далі?"
+        </div>
     </div>
 
-    <!-- Зображення -->
-    <div class="image-container">
-        <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image">
-        <p class="image-caption">Зображення згенероване Microsoft Designer</p>
+    <!-- Заголовок -->
+    <div class="section-heading">
+        Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" дев'яностих
     </div>
 
-    <!-- Текст і Заголовок -->
-    <h2>Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" у 1990-тих</h2>
-    <p>У березні 1990 року Дмитро Павличко балатується та успішно проходить на пост народного депутата ХІІ скликання...</p>
+    <!-- Основний текст -->
+    <div class="left-text-container">
+        <p>30 липня 1991 року Буш-старший приїхав у Москву з офіційним візитом. Причиною відвідин було підписання домовленостей із дуже довгою назвою: «Договір про скорочення і обмеження стратегічних наступальних озброєнь СРСР-США» (так званий СНО-1). Республіканець і компартієць були певними, що Союз скоро кардинально зміниться і розпад «соціалістичного раю» цілком можливий. Потрібно було забезпечити гарантії безпеки для Вашингтона і Москви у цьому новому світі.</p>
+    </div>
 
-    <!-- Друге зображення -->
-    <div class="image-container">
-        <img src="https://maksymsharan.github.io/Знімок%20екрана%20(914).png" alt="Second Example Image">
-        <p class="image-caption">Зображення згенероване Microsoft Designer</p>
+    <!-- Фото з відступами -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/George_Bush_and_Mikhail_Gorbachev_sign_the_START_1991.jpg" alt="Підписання СНО-1" class="full-width-image">
+
+    <!-- Підпис під фото -->
+    <div class="photo-caption">
+        31 липня 1991 року президент США Джордж Буш (сидить ліворуч) і генеральний секретар Комуністичної партії Радянського Союзу Михайло Горбачов (сидить праворуч) підписують Угоду СНВ-1 про взаємне знищення стратегічної ядерної зброї двох країн.
     </div>
 
     <script>
-        // Перемикач теми
+        // Перемикання між світлою і темною темами
         function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('dark-mode');
         }
     </script>
+
 </body>
 </html>
