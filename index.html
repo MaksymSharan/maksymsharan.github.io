@@ -215,7 +215,33 @@ body.dark-mode .photo-caption {
     <div class="section-heading">
         Частина І. Біднесенький "Король Лір" по-українськи проти Толкінських "Володарів перснів" дев'яностих
     </div>
-<img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зображення на всю ширину</title>
+    <style>
+        /* Стиль для зображення */
+        img.full-width-image {
+            width: calc(100% - 4cm); /* Загальна ширина з відступами 2 см з кожного боку */
+            margin: 0 2cm; /* Відступи по 2 см зліва і справа */
+            display: block; /* Вирівнює зображення по центру */
+            max-width: 100%; /* Забезпечує адаптивність зображення */
+            height: auto; /* Зберігає пропорції */
+        }
+        
+        /* Адаптація для мобільних пристроїв */
+        @media (max-width: 600px) {
+            img.full-width-image {
+                margin: 0 1cm; /* Зменшення відступів на мобільних */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://maksymsharan.github.io/Designer.jpeg" alt="Example Image" class="full-width-image">
+
+</body>
+</html>
 
     <!-- Основний текст -->
     <div class="left-text-container">
