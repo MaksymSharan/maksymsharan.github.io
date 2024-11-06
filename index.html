@@ -20,109 +20,83 @@
             color: #f2f2f2;
         }
 
-        /* Назва по центру */
-        .title {
+        /* Стиль заголовку */
+        .hero-text {
             text-align: center;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: bold;
-            margin-top: 20px;
-            color: #333;
+            color: #000;
+            padding-top: 20px;
         }
 
-        /* Підзаголовок курсивом */
-        .subtitle {
-            text-align: center;
+        /* Стиль підзаголовку */
+        .sub-heading {
             font-size: 18px;
             font-style: italic;
+            text-align: center;
             color: #666;
             margin-bottom: 10px;
         }
 
-        /* Чорна лінія під заголовком */
-        .divider {
-            width: 60%;
-            margin: 10px auto;
-            border-top: 2px solid #000;
+        /* Розділювальна лінія */
+        .section-divider {
+            width: 50%;
+            margin: 20px auto;
+            border-top: 2px solid #333;
         }
 
-        /* Стиль для розділів */
+        /* Основний текст */
+        .left-text-container {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            max-width: 90%;
+            margin-left: 3cm;
+            margin-right: 3cm;
+        }
+        
+        /* Назви розділів */
         .section-title {
+            text-align: center;
             font-size: 22px;
             font-weight: bold;
             color: #333;
-            margin-top: 20px;
-            text-align: center;
+            margin-top: 10px;
         }
 
         /* Темна тема для розділів */
         body.dark-mode .section-title {
             color: #aaa;
         }
-
-        /* Основний текст */
-        .text-container {
-            font-size: 18px;
-            line-height: 1.5;
-            text-align: justify;
-            max-width: 90%;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        /* Віджет для перемикання тем */
-        .theme-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        body.dark-mode .theme-switch {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #333;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- Заголовок та підзаголовок по центру -->
-    <div class="title">Шекспірівський Макбет по-українськи</div>
-    <div class="subtitle">або як Леонід Макарович країну обкрадав</div>
-    <div class="divider"></div>
+    <!-- Заголовок -->
+    <div class="hero-text">Шекспірівський Макбет по-українськи</div>
+    <div class="sub-heading">або як Леонід Макарович країну обкрадав</div>
+    <div class="section-divider"></div>
 
     <!-- Розділи -->
-    <div class="section-title">Ядерне роззброєння</div>
-    <div class="text-container">
-        <p>Опис ядерного роззброєння та передумов цього рішення...</p>
+    <div class="section-title">Ядерне роззброєння України</div>
+    <div class="left-text-container">
+        <p>Перший президент України добровільно позбувся ядерної зброї, тим самим визначивши подальшу долю країни в міжнародній політиці...</p>
     </div>
 
     <div class="section-title">Приватизація державного майна</div>
-    <div class="text-container">
-        <p>Історія приватизації державних об'єктів, її наслідки та ключові учасники...</p>
+    <div class="left-text-container">
+        <p>Із настанням приватизації кланові структури отримали в свої руки державні підприємства, що колись належали всім громадянам...</p>
     </div>
 
-    <div class="section-title">Концерн "Бласко" та Чорноморське морське пароплавство</div>
-    <div class="text-container">
-        <p>Історія заснування концерну "Бласко", його діяльність та наслідки...</p>
+    <div class="section-title">Концерн Бласко</div>
+    <div class="left-text-container">
+        <p>У 1993 році президент Леонід Кравчук видав указ, яким було переутворено Чорноморське морське пароплавство на Концерн Бласко...</p>
     </div>
 
-    <!-- Віджет для перемикання теми -->
-    <button class="theme-switch" onclick="toggleTheme()">Світла/Темна тема</button>
-
-    <!-- JavaScript для перемикання теми -->
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
         }
     </script>
-
 </body>
 </html>
