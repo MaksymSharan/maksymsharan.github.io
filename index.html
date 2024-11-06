@@ -4,86 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Переломні Роки України: Роззброєння та Приватизація</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            background-color: #f5f5f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3d3d3d;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://example.com/background.jpg'); /* Replace with a relevant image */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #8B4513; /* Dark brown for a vintage touch */
+        }
+
+        .interactive-map, .timeline, .case-studies {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e6e6e1;
+            border: 1px solid #ccc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3d3d3d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #333;
+            color: #f2f2f2;
+        }
+
+        .dark-mode header, .dark-mode footer {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode .interactive-map, .dark-mode .timeline, .dark-mode .case-studies {
+            background-color: #444;
+            color: #ddd;
+            border-color: #666;
+        }
+    </style>
 </head>
-    /* Global Styles */
-body {
-    font-family: 'Georgia', serif;
-    color: #333;
-    background-color: #f5f5f0;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #3d3d3d;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Hero Section */
-.hero {
-    background-image: url('https://example.com/background.jpg'); /* Replace with a relevant image */
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    position: relative;
-    color: white;
-    text-align: center;
-}
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Section Styles */
-section {
-    padding: 50px;
-}
-
-h3 {
-    font-size: 24px;
-    color: #8B4513; /* Dark brown for a vintage touch */
-}
-
-.interactive-map, .timeline, .case-studies {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #e6e6e1;
-    border: 1px solid #ccc;
-}
-
-/* Footer */
-footer {
-    background-color: #3d3d3d;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-}
-
 <body>
     <!-- Header and Navigation -->
     <header>
@@ -102,6 +120,7 @@ footer {
         <div class="overlay">
             <h2>Історія, Що Визначила Майбутнє</h2>
             <p>Досліджуйте роззброєння, економічні реформи та становлення незалежної України.</p>
+            <button onclick="toggleDarkMode()">Перемкнути тему</button>
         </div>
     </section>
 
@@ -111,6 +130,7 @@ footer {
         <p>Рішення про добровільне роззброєння стало поворотним моментом для новоствореної незалежної України.</p>
         <div class="interactive-map">
             <!-- Placeholder for map of disarmament locations -->
+            <p>Карта розташування ядерного роззброєння.</p>
         </div>
     </section>
 
@@ -120,6 +140,7 @@ footer {
         <p>Історія великого судноплавного гіганта, який опинився в центрі корупційних скандалів.</p>
         <div class="timeline">
             <!-- Placeholder for interactive timeline of events -->
+            <p>Хронологія подій компанії BLASCO.</p>
         </div>
     </section>
 
@@ -129,23 +150,19 @@ footer {
         <p>Приватизація стала точкою відліку для економічного становлення України.</p>
         <div class="case-studies">
             <!-- Placeholder for case studies of privatized companies -->
+            <p>Дослідження випадків приватизованих компаній.</p>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Українські Переломні Роки</p>
     </footer>
-// Toggle Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-}
 
-// Example for adding interactivity with future map/timeline elements
-document.addEventListener("DOMContentLoaded", () => {
-    // Placeholder for interactivity functionality
-    console.log("Page Loaded. Add interactive elements here.");
-});
-
-    <script src="script.js"></script>
+    <script>
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
