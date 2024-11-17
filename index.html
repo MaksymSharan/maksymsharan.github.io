@@ -157,6 +157,10 @@
         </nav>
     </header>
 
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анімація Фотографій</title>
     <style>
@@ -188,12 +192,12 @@
 
         /* Анімація для першого ряду */
         .photo-row.row-1 {
-            animation: moveLeft 10s linear infinite;
+            animation: moveLeft 20s linear infinite; /* Швидкість збільшена */
         }
 
         /* Анімація для другого ряду */
         .photo-row.row-2 {
-            animation: moveRight 10s linear infinite;
+            animation: moveRight 20s linear infinite; /* Швидкість збільшена */
         }
 
         /* Фотографії */
@@ -201,7 +205,7 @@
             flex: 0 0 auto;
             width: 150px;
             height: 100px;
-            object-fit: cover;
+            object-fit: contain; /* Забезпечує вміщення фото повністю */
             border: 2px solid #333;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
@@ -246,6 +250,7 @@
             <img class="photo" src="https://via.placeholder.com/150" alt="Фото 8">
         </div>
     </div>
+
 
     <!-- Hero Section with Background Image -->
     <section class="hero">
