@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Переломні Роки України: Роззброєння та Приватизація</title>
     <style>
-        /* Global Styles */
+        /* Глобальні стилі */
         body {
             font-family: 'Georgia', serif;
             color: #333;
@@ -16,7 +16,7 @@
 
         header {
             background-color: #1a1a1a;
-            color: #f5e1b5; /* Gold accents */
+            color: #f5e1b5;
             padding: 15px;
             text-align: center;
             border-bottom: 2px solid #e6b800;
@@ -25,12 +25,10 @@
         h1 {
             font-size: 36px;
             font-weight: bold;
-            font-family: 'Times New Roman', serif;
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
 
-        /* Navigation */
         nav ul {
             display: flex;
             justify-content: center;
@@ -50,49 +48,91 @@
         }
 
         nav ul li a:hover {
-            color: #ffd700; /* Brighter gold for hover effect */
+            color: #ffd700;
         }
 
-        /* Hero Section */
+        /* Секція Hero */
         .hero {
-            background-image: url('https://example.com/background.jpg'); /* Replace with a relevant image */
+            background-image: url('https://via.placeholder.com/1920x1080');
             background-size: cover;
             background-position: center;
             height: 60vh;
             color: #f5e1b5;
             text-align: center;
-            border-top: 5px solid #d4af37;
-            border-bottom: 5px solid #d4af37;
-            position: relative;
-        }
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
         }
 
-        h2 {
+        .hero h2 {
             font-size: 30px;
             font-style: italic;
         }
 
-        /* Section Styling with Ornate Borders */
+        /* Галерея фотографій */
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .photo-row {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            height: 137px;
+            position: relative;
+        }
+
+        .photo-row.row-1 {
+            animation: moveLeft 25s linear infinite;
+        }
+
+        .photo-row.row-2 {
+            animation: moveRight 25s linear infinite;
+        }
+
+        .photo {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 137px;
+            object-fit: contain;
+            border: 1px solid #333;
+        }
+
+        @keyframes moveLeft {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveRight {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Секції */
         section {
             padding: 50px;
-            border: 1px solid #d4af37;
             background-color: #faf7f0;
             margin: 20px;
+            border: 1px solid #d4af37;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Section Titles */
-        h3 {
+        section h3 {
             font-size: 26px;
             color: #8B4513;
             margin-bottom: 10px;
@@ -100,16 +140,6 @@
             border-bottom: 2px solid #e6b800;
             display: inline-block;
             padding-bottom: 5px;
-        }
-
-        /* Special Containers */
-        .interactive-map, .timeline, .case-studies {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #e6e6e1;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
@@ -122,7 +152,7 @@
             border-top: 2px solid #e6b800;
         }
 
-        /* Dark Mode */
+        /* Темна тема */
         .dark-mode {
             background-color: #333;
             color: #f2f2f2;
@@ -130,13 +160,6 @@
 
         .dark-mode header, .dark-mode footer {
             background-color: #222;
-            color: #fff;
-        }
-
-        .dark-mode .interactive-map, .dark-mode .timeline, .dark-mode .case-studies {
-            background-color: #444;
-            color: #ddd;
-            border-color: #666;
         }
 
         .dark-mode h1, .dark-mode h3 {
@@ -145,7 +168,7 @@
     </style>
 </head>
 <body>
-    <!-- Header and Navigation -->
+    <!-- Заголовок -->
     <header>
         <h1>Переломні Роки України</h1>
         <nav>
@@ -157,145 +180,51 @@
         </nav>
     </header>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анімація Фотографій</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #f2ebe3;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        /* Загальний стиль для галереї */
-.photo-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 0px; /* Прибираємо проміжок між рядами */
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Стиль для рядків */
-.photo-row {
-    display: flex;
-    gap: 5px; /* Проміжок між фотографіями */
-    align-items: center;
-    height: 137px; /* Висота фото */
-    position: relative;
-}
-
-/* Перший ряд */
-.photo-row.row-1 {
-    animation: moveLeft 25s linear infinite;
-}
-
-/* Другий ряд */
-.photo-row.row-2 {
-    animation: moveRight 25s linear infinite;
-}
-        
-/* Фотографії */
-.photo {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 137px;
-    object-fit: contain;
-    border: 1px solid #333;
-}
-
-/* Анімація вліво */
-@keyframes moveLeft {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-/* Анімація вправо */
-@keyframes moveRight {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
-<div class="photo-gallery">
-    <!-- Перший ряд -->
-    <div class="photo-row row-1">
-        <img class="photo" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Leonid_Kravchuk_Chornovil3.jpg" alt="Фото 1">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4">
-        <!-- Дублювання -->
-        <img class="photo" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Leonid_Kravchuk_Chornovil3.jpg" alt="Фото 1 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4 дубль">
-    </div>
-
-    <!-- Другий ряд -->
-    <div class="photo-row row-2">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8">
-        <!-- Дублювання -->
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7 дубль">
-        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8 дубль">
-    </div>
-</div>
-
-    <!-- Hero Section with Background Image -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="overlay">
-            <h2>Історія, Що Визначила Майбутнє</h2>
-            <p>Досліджуйте роззброєння, економічні реформи та становлення незалежної України.</p>
-            <button onclick="toggleDarkMode()">Перемкнути тему</button>
-        </div>
+        <h2>Історія, Що Визначила Майбутнє</h2>
     </section>
 
-    <!-- Nuclear Disarmament Section -->
+    <!-- Галерея -->
+    <div class="photo-gallery">
+        <div class="photo-row row-1">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 1">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 1 дубль">
+        </div>
+        <div class="photo-row row-2">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8">
+            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5 дубль">
+        </div>
+    </div>
+
+    <!-- Секції -->
     <section id="nuclear-disarmament">
         <h3>Добровільне Ядерне Роззброєння</h3>
-        <p>Рішення про добровільне роззброєння стало поворотним моментом для новоствореної незалежної України.</p>
-        <div class="interactive-map">
-            <p>Карта розташування ядерного роззброєння.</p>
-        </div>
+        <p>Рішення про добровільне роззброєння стало поворотним моментом для України.</p>
     </section>
 
-    <!-- BLASCO Section -->
     <section id="blasco">
         <h3>Чорноморське Пароплавство BLASCO</h3>
         <p>Історія великого судноплавного гіганта, який опинився в центрі корупційних скандалів.</p>
-        <div class="timeline">
-            <p>Хронологія подій компанії BLASCO.</p>
-        </div>
     </section>
 
-    <!-- Privatization Section -->
     <section id="privatization">
         <h3>Приватизація 90-х</h3>
         <p>Приватизація стала точкою відліку для економічного становлення України.</p>
-        <div class="case-studies">
-            <p>Дослідження випадків приватизованих компаній.</p>
-        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 Українські Переломні Роки</p>
     </footer>
 
     <script>
-        // Toggle Dark Mode
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
