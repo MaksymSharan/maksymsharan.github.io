@@ -174,9 +174,9 @@
 .photo-gallery {
     display: flex;
     flex-direction: column;
-    gap: 0px; /* Менший простір між рядами */
+    gap: 0px; /* Прибираємо проміжок між рядами */
     margin: 0 auto;
-    padding-top: 0px; /* Піднімаємо ряди ближче */
+    padding: 0;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -185,24 +185,20 @@
 /* Стиль для рядків */
 .photo-row {
     display: flex;
-    gap: 5px;
+    gap: 5px; /* Проміжок між фотографіями */
     align-items: center;
-    height: 137px; /* Висота відповідно до зображень */
+    height: 137px; /* Висота фото */
     position: relative;
 }
 
-/* Анімація для першого ряду */
+/* Перший ряд */
 .photo-row.row-1 {
     animation: moveLeft 25s linear infinite;
-    margin-bottom: -50px; /* Негативний відступ для перетину з другим рядом */
-    z-index: 2; /* Верхній ряд перекриває нижній */
 }
 
-/* Анімація для другого ряду */
+/* Другий ряд */
 .photo-row.row-2 {
     animation: moveRight 25s linear infinite;
-    z-index: 1; /* Нижній ряд позаду */
-    margin-top: -50px; /* Негативний відступ для перетину з першим рядом */
 }
 
 /* Фотографії */
@@ -212,50 +208,54 @@
     height: 137px;
     object-fit: contain;
     border: 1px solid #333;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Анімація вліво */
 @keyframes moveLeft {
     from {
-        transform: translateX(-100%);
+        transform: translateX(0);
     }
     to {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 }
 
 /* Анімація вправо */
 @keyframes moveRight {
     from {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(100%);
     }
 }
-
-    </style>
-</head>
-<body>
-
-    <div class="photo-gallery">
-        <!-- Перший ряд фотографій -->
-        <div class="photo-row row-1">
-            <img class="photo" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Leonid_Kravchuk_Chornovil3.jpg" alt="Фото 1">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4">
-        </div>
-
-        <!-- Другий ряд фотографій -->
-        <div class="photo-row row-2">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7">
-            <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8">
-        </div>
+<div class="photo-gallery">
+    <!-- Перший ряд -->
+    <div class="photo-row row-1">
+        <img class="photo" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Leonid_Kravchuk_Chornovil3.jpg" alt="Фото 1">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4">
+        <!-- Дублювання -->
+        <img class="photo" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Leonid_Kravchuk_Chornovil3.jpg" alt="Фото 1 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4 дубль">
     </div>
+
+    <!-- Другий ряд -->
+    <div class="photo-row row-2">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8">
+        <!-- Дублювання -->
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7 дубль">
+        <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8 дубль">
+    </div>
+</div>
 
 
     <!-- Hero Section with Background Image -->
