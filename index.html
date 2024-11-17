@@ -249,6 +249,53 @@
             <img class="photo" src="https://via.placeholder.com/150" alt="Фото 8">
         </div>
     </div>
+/* Стиль галереї */
+.photo-gallery {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.gallery-row {
+    display: flex;
+    animation: scroll-left 10s linear infinite;
+}
+
+.gallery-row.reverse {
+    animation: scroll-right 10s linear infinite;
+}
+
+.photo {
+    flex-shrink: 0;
+    width: 200px;
+    margin: 0 10px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Анімації */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
 
     <!-- Hero Section with Background Image -->
     <section class="hero">
