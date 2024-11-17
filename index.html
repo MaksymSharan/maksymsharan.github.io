@@ -3,185 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Переломні Роки України: Роззброєння та Приватизація</title>
+    <title>Безперервна анімація фотографій</title>
     <style>
-        /* Глобальні стилі */
         body {
-            font-family: 'Georgia', serif;
-            color: #333;
-            background-color: #f5f5f0;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            background-color: #f5f5f5;
+            overflow: hidden;
         }
 
-        header {
-            background-color: #1a1a1a;
-            color: #f5e1b5;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 2px solid #e6b800;
-        }
-
-        h1 {
-            font-size: 36px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #f5e1b5;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-
-        /* Галерея фотографій */
         .photo-gallery {
             display: flex;
             flex-direction: column;
-            gap: 0;
-            width: 100%;
             overflow: hidden;
-            background-color: #1a1a1a;
-            padding: 20px 0;
+            background-color: #000;
+            padding: 10px 0;
         }
 
         .photo-row {
             display: flex;
-            gap: 5px;
             align-items: center;
-            height: 137px;
+            white-space: nowrap; /* Забезпечує безперервний ряд */
             position: relative;
-            white-space: nowrap; /* Для безшовного переходу */
         }
 
+        /* Анімація для рядів */
         .photo-row.row-1 {
-            animation: moveLeft 25s linear infinite;
+            animation: slide-left 10s linear infinite;
         }
 
         .photo-row.row-2 {
-            animation: moveRight 25s linear infinite;
+            animation: slide-right 12s linear infinite;
         }
 
+        /* Стиль для фотографій */
         .photo {
             flex: 0 0 auto;
             width: 200px;
             height: 137px;
+            margin: 0 5px;
             object-fit: cover;
-            border: 1px solid #333;
+            border: 2px solid #fff;
         }
 
         /* Анімація вліво */
-        @keyframes moveLeft {
-            from {
+        @keyframes slide-left {
+            0% {
                 transform: translateX(0);
             }
-            to {
+            100% {
                 transform: translateX(-100%);
             }
         }
 
         /* Анімація вправо */
-        @keyframes moveRight {
-            from {
+        @keyframes slide-right {
+            0% {
                 transform: translateX(0);
             }
-            to {
+            100% {
                 transform: translateX(100%);
             }
-        }
-
-        /* Секція Hero */
-        .hero {
-            background-image: url('https://via.placeholder.com/1920x1080');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            color: #f5e1b5;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h2 {
-            font-size: 30px;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            color: #f5e1b5;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            border-top: 2px solid #e6b800;
         }
     </style>
 </head>
 <body>
-    <!-- Заголовок -->
-    <header>
-        <h1>Переломні Роки України</h1>
-        <nav>
-            <ul>
-                <li><a href="#nuclear-disarmament">Ядерне Роззброєння</a></li>
-                <li><a href="#blasco">BLASCO</a></li>
-                <li><a href="#privatization">Приватизація</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Галерея -->
     <div class="photo-gallery">
+        <!-- Перший ряд -->
         <div class="photo-row row-1">
-            <!-- Дублювання для безшовної анімації -->
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 1">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4">
+            <!-- Дублювання -->
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 1 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 2 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 3 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 4 дубль">
         </div>
+
+        <!-- Другий ряд -->
         <div class="photo-row row-2">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8">
+            <!-- Дублювання -->
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 5 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 6 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 7 дубль">
             <img class="photo" src="https://via.placeholder.com/200x137" alt="Фото 8 дубль">
         </div>
     </div>
-
-    <!-- Секція Hero -->
-    <section class="hero">
-        <h2>Історія, Що Визначила Майбутнє</h2>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Українські Переломні Роки</p>
-    </footer>
 </body>
 </html>
