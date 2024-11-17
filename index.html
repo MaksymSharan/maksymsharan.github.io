@@ -174,10 +174,10 @@
 .photo-gallery {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Менший простір між рядами */
+    gap: 0px; /* Менший простір між рядами */
     margin: 0 auto;
-    padding-top: 20px; /* Піднімаємо ряди ближче */
-    width: 90%;
+    padding-top: 0px; /* Піднімаємо ряди ближче */
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -185,16 +185,16 @@
 /* Стиль для рядків */
 .photo-row {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
-    height: 424px; /* Висота відповідно до зображень */
+    height: 137px; /* Висота відповідно до зображень */
     position: relative;
 }
 
 /* Анімація для першого ряду */
 .photo-row.row-1 {
     animation: moveLeft 25s linear infinite;
-    margin-bottom: -100px; /* Негативний відступ для перетину з другим рядом */
+    margin-bottom: -50px; /* Негативний відступ для перетину з другим рядом */
     z-index: 2; /* Верхній ряд перекриває нижній */
 }
 
@@ -202,7 +202,7 @@
 .photo-row.row-2 {
     animation: moveRight 25s linear infinite;
     z-index: 1; /* Нижній ряд позаду */
-    margin-top: -100px; /* Негативний відступ для перетину з першим рядом */
+    margin-top: -50px; /* Негативний відступ для перетину з першим рядом */
 }
 
 /* Фотографії */
@@ -211,7 +211,7 @@
     width: 200px;
     height: 137px;
     object-fit: contain;
-    border: 2px solid #333;
+    border: 1px solid #333;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
