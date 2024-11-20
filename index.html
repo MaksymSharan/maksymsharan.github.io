@@ -22,11 +22,10 @@
             justify-content: center;
             height: 100vh;
             width: 100%;
-            position: relative;
             text-align: center;
             background-image: url('https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F.png');
             background-size: cover;
-            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-position: center;
         }
 
@@ -42,6 +41,9 @@
         header {
             background-color: #1a1a1a;
             padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -74,14 +76,31 @@
         .full-width-image {
             width: 100%;
             display: block;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.7s ease-in-out;
+        }
+
+        .full-width-image.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         section {
             padding: 50px;
-            margin: 20px;
+            margin: 20px auto;
             background-color: #faf7f0;
             border-radius: 10px;
             border: 1px solid #d4af37;
+            width: 80%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease-in-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         footer {
@@ -91,6 +110,27 @@
             padding: 10px;
         }
     </style>
+    <script>
+        // Scroll Animation Script
+        document.addEventListener('scroll', () => {
+            const images = document.querySelectorAll('.full-width-image');
+            const sections = document.querySelectorAll('section');
+
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    image.classList.add('visible');
+                }
+            });
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Fullscreen Intro Section -->
@@ -111,11 +151,6 @@
 
     <!-- Full-width Image -->
     <img class="full-width-image" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1081).png" alt="Додаткове фото">
-
-    <!-- Dynamic Photo Section -->
-    <div class="photo-gallery">
-        <!-- Ваш код із анімацією фотографій -->
-    </div>
 
     <!-- Content Sections -->
     <section id="nuclear-disarmament">
