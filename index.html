@@ -113,38 +113,40 @@
         /* Секція із зображенням і текстом */
         .section-with-image {
             display: flex;
-            align-items: flex-start;
+            flex-direction: row; /* Встановлюємо рядок для розподілу фото і тексту */
+            align-items: center;
             justify-content: space-between;
-            margin: 50px 2%;
-            padding: 30px;
-            border: 3px solid #d4af37;
+            margin: 50px auto; /* Центрування блоку */
+            padding: 20px;
+            border: 2px solid #d4af37;
             background-color: #faf7f0;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            width: 90%
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Ширина блоку */
         }
 
         .section-with-image img {
-            max-width: 350px;
+            flex: 1; /* Фото займає половину ширини */
+            max-width: 48%; /* Гарантуємо, що фото не перевищує половини блоку */
             height: auto;
-            margin-left: 2cm; /* Відступ від лівого краю */
-            border: 3px solid #d4af37;
-            border-radius: 10px;
+            margin-right: 2%; /* Відстань між фото і текстом */
+            border: 2px solid #d4af37;
+            border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для фото */
         }
 
         .section-with-image .text {
-            flex: 1;
-            text-align: right;
-            font-size: 22px;
-            line-height: 1.8;
+            flex: 1; /* Текст займає половину ширини */
+            font-size: 20px; /* Розмір тексту */
+            line-height: 1.8; /* Інтерліньяж для зручності читання */
             color: #333;
             font-family: 'Times New Roman', Times, serif;
             font-style: italic;
+            margin-left: 2%; /* Відстань від тексту до фото */
         }
 
         .section-with-image .text strong {
-            font-size: 26px;
+            font-size: 22px; /* Трохи більший розмір виділеного тексту */
             color: #a52a2a;
         }
     </style>
