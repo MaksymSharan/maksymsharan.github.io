@@ -151,6 +151,21 @@
         }
     </style>
     <script>
+    function toggleContent() {
+        const content = document.getElementById('more-content');
+        const button = document.querySelector('.read-more-btn');
+
+        if (content.classList.contains('visible')) {
+            content.classList.remove('visible');
+            button.textContent = 'Читати більше'; // Змінюємо текст кнопки
+        } else {
+            content.classList.add('visible');
+            button.textContent = 'Закрити'; // Змінюємо текст кнопки
+        }
+    }
+</script>
+
+    <script>
         // Scroll Animation Script
         document.addEventListener('scroll', () => {
             const images = document.querySelectorAll('.full-width-image');
