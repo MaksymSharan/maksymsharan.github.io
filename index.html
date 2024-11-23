@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -73,20 +72,6 @@
             color: #1a1a1a;
         }
 
-        /* Full-width image */
-        .full-width-image {
-            width: 100%;
-            display: block;
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all 0.7s ease-in-out;
-        }
-
-        .full-width-image.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
         section {
             padding: 50px;
             margin: 20px auto;
@@ -114,55 +99,47 @@
         /* Секція із зображенням і текстом */
         .section-with-image {
             display: flex;
-            flex-direction: row; /* Встановлюємо рядок для розподілу фото і тексту */
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            margin: 50px auto; /* Центрування блоку */
+            margin: 50px auto;
             padding: 20px;
             border: 2px solid #d4af37;
             background-color: #faf7f0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%; /* Ширина блоку */
+            width: 90%;
         }
 
         .section-with-image img {
-            flex: 1; /* Фото займає половину ширини */
-            max-width: 48%; /* Гарантуємо, що фото не перевищує половини блоку */
+            flex: 1;
+            max-width: 48%;
             height: auto;
-            margin-right: 2%; /* Відстань між фото і текстом */
+            margin-right: 2%;
             border: 2px solid #d4af37;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для фото */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .section-with-image .text {
-            flex: 1; /* Текст займає половину ширини */
-            font-size: 20px; /* Розмір тексту */
-            line-height: 1.8; /* Інтерліньяж для зручності читання */
+            flex: 1;
+            font-size: 20px;
+            line-height: 1.8;
             color: #333;
             font-family: 'Times New Roman', Times, serif;
             font-style: italic;
-            margin-left: 2%; /* Відстань від тексту до фото */
+            margin-left: 2%;
         }
 
         .section-with-image .text strong {
-            font-size: 22px; /* Трохи більший розмір виділеного тексту */
+            font-size: 22px;
             color: #a52a2a;
         }
     </style>
     <script>
         // Scroll Animation Script
         document.addEventListener('scroll', () => {
-            const images = document.querySelectorAll('.full-width-image');
             const sections = document.querySelectorAll('section');
-
-            images.forEach(image => {
-                const rect = image.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    image.classList.add('visible');
-                }
-            });
 
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect();
@@ -190,34 +167,35 @@
         </nav>
     </header>
 
-    <!-- Full-width Image -->
-    <img class="full-width-image" src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1081).png" alt="Додаткове фото">
-
-    <!-- Секція із зображенням і текстом -->
+    <!-- Карикатура і текст -->
     <div class="section-with-image">
         <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1083).png" alt="Фото депутатів">
         <div class="text">
             <strong>Запрошуємо Вас до нашої галереї!</strong><br>
-            На цій "картині" ми можемо побачити депутатів, за якими під пильним, скрупульозним контролем спостерігають велетенські грошові мішки. Ще у далекому 1889 році у сатиричному журналі <i>Puck</i> редактори опублікували роботу карикатуриста Джозефа Кеплера під назвою "<i>Боси Сенату</i>".<br><br>
-            Пройшло більше 130 років: США займають 25 місце за індексом сприйняття корупції, а Україна топчеться на жалюгідному 104 пункті. Нас обігнали Ефіопія, Танзанія, Куба та ще 100 країн світу. Але чому так сталося? Що і коли пішло не так? У який момент нація повернула не туди? Кому це було вигідно? І, найголовніше, як вирватися із цієї злиденної, сороміцької системи?
+            На цій "картині" ми можемо побачити депутатів, за якими під пильним, скрупульозним контролем спостерігають велетенські грошові мішки...
         </div>
     </div>
 
+    <!-- Nuclear Disarmament Section -->
     <section id="nuclear-disarmament">
-    <h2>Добровільне Ядерне Роззброєння</h2>
-    <p>Текст про ядерне роззброєння...</p>
-</section>
+        <h2>Добровільне Ядерне Роззброєння</h2>
+        <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1081).png" alt="Ілюстрація до ядерного роззброєння">
+        <p>Текст про ядерне роззброєння...</p>
+    </section>
 
-<section id="blasco">
-    <h2>Чорноморське Пароплавство BLASCO</h2>
-    <p>Текст про BLASCO...</p>
-</section>
+    <!-- BLASCO Section -->
+    <section id="blasco">
+        <h2>Чорноморське Пароплавство BLASCO</h2>
+        <p>Текст про BLASCO...</p>
+    </section>
 
-<section id="privatization">
-    <h2>Приватизація 90-х</h2>
-    <p>Текст про приватизацію...</p>
-</section>
+    <!-- Privatization Section -->
+    <section id="privatization">
+        <h2>Приватизація 90-х</h2>
+        <p>Текст про приватизацію...</p>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 Українські Переломні Роки</p>
     </footer>
