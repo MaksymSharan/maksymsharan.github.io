@@ -39,12 +39,11 @@
 
         /* Header and Navigation */
         header {
-            background-color: linear-gradient(90deg, #1e3c72, #2a5298); /* Градієнт від синього до блакитного */;
+            background-color: #1a1a1a;
             padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для об'ємності */
         }
 
         nav ul {
@@ -57,32 +56,22 @@
         }
 
         nav ul li a {
+            color: #ffd700;
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 10px 20px;
+            border: 2px solid #ffd700;
             border-radius: 5px;
             background-color: transparent;
             transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            color: #1e3c72;
-            transform: scale(1.1); /* Легке збільшення при наведенні */
-            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.4); /* Тінь при наведенні */
+            background-color: #ffd700;
+            color: #1a1a1a;
         }
 
-        nav ul li a::before {
-            content: "•"; /* Маркер */
-            font-size: 20px;
-            color: #ffd700;
-            margin-right: 8px;
-            position: absolute;
-            left: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            
         section {
             padding: 50px;
             margin: 20px auto;
