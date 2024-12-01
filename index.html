@@ -20,6 +20,9 @@
             height: 100vh;
             width: 100%;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .video-container video {
@@ -49,42 +52,6 @@
             font-weight: bold;
         }
 
-        /* Header and Navigation */
-        header {
-            background-color: #1a1a1a;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: #ffd700;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border: 2px solid #ffd700;
-            border-radius: 5px;
-            background-color: transparent;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #ffd700;
-            color: #1a1a1a;
-        }
-
         /* Content Section */
         section {
             padding: 50px;
@@ -95,14 +62,6 @@
             width: 80%;
             font-size: 18px;
             line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            color: #f5e1b5;
-            text-align: center;
-            padding: 10px;
         }
     </style>
 </head>
@@ -116,42 +75,10 @@
         <div class="overlay-text">Переломні Роки України</div>
     </div>
 
-    <!-- Header and Navigation -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#elections-1991">Вибори 1991-го</a></li>
-                <li><a href="#nuclear-disarmament">Ядерне Роззброєння</a></li>
-                <li><a href="#blasco">BLASCO</a></li>
-                <li><a href="#privatization">Приватизація</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Content Sections -->
-    <section id="elections-1991">
-        <h2>Вибори 1991-го</h2>
-        <p>Текст про перші вибори в незалежній Україні 1991 року...</p>
+    <!-- Content Section -->
+    <section>
+        <h2>Тестовий розділ</h2>
+        <p>Це текст після відео. Перевірка роботи відео на веб-сторінці.</p>
     </section>
-
-    <section id="nuclear-disarmament">
-        <h2>Добровільне Ядерне Роззброєння</h2>
-        <p>Текст про ядерне роззброєння...</p>
-    </section>
-
-    <section id="blasco">
-        <h2>Чорноморське Пароплавство BLASCO</h2>
-        <p>Текст про BLASCO...</p>
-    </section>
-
-    <section id="privatization">
-        <h2>Приватизація 90-х</h2>
-        <p>Текст про приватизацію...</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Українські Переломні Роки</p>
-    </footer>
 </body>
 </html>
