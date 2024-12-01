@@ -103,7 +103,60 @@
             text-align: center;
             padding: 10px;
         }
+    
+    /* Секція із зображенням і текстом */
+        .section-with-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #d4af37;
+            background-color: #faf7f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+        }
+
+        .section-with-image img {
+            flex: 1;
+            max-width: 48%;
+            height: auto;
+            margin-right: 2%;
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-with-image .text {
+            flex: 1;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            margin-left: 2%;
+        }
+
+        .section-with-image .text strong {
+            font-size: 22px;
+            color: #a52a2a;
+        }
     </style>
+    <script>
+        // Scroll Animation Script
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Fullscreen Video -->
