@@ -117,7 +117,7 @@
             border-radius: 10px;
             border: 1px solid #d4af37;
             width: 80%;
-            opacity: 0;
+            opacity: 1;
             transform: translateY(50px);
             transition: all 0.7s ease-in-out;
         }
@@ -172,7 +172,8 @@
         .section-with-image .text strong {
             font-size: 22px;
             color: #a52a2a;
-
+        }
+            
         /* Загальний стиль для секції */
     .section-with-content {
         margin: 50px auto;
@@ -214,7 +215,7 @@
     }
 
     /* Адаптація для мобільних пристроїв */
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         .content-container {
             flex-direction: column;
             align-items: center;
@@ -222,8 +223,8 @@
         }
     
         .image-content img {
-            max-width: 80%;
-            margin-top: 20px;
+            max-width: 100%;
+            margin-top: 0 auto 20px;
         }
     }     
     </style>
@@ -251,7 +252,7 @@
     <!-- Fullscreen Video -->
     <div class="fullscreen-video">
         <video autoplay muted loop>
-            <source src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Video-2.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Video-2.mp4" type="video/mp4"/>
             Ваш браузер не підтримує HTML5 відео.
         </video>
         <div class="overlay-text">Переломні Роки України</div>
