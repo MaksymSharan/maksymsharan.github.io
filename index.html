@@ -227,80 +227,6 @@
             margin-top: 0 auto 20px;
         }
     }     
-
-        /* Контейнер для зображення */
-        .image-container {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            width: fit-content;
-        }
-
-        /* Лупа (значок "+" всередині кола) */
-        .zoom-icon {
-            position: absolute;
-            top: 10px; /* Відступ від верхнього краю */
-            right: 10px; /* Відступ від правого краю */
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            pointer-events: none; /* Значок не перешкоджає натисканню */
-        }
-
-        /* Анімація при наведенні на зображення */
-        .image-container:hover .zoom-icon {
-            transform: scale(1.2);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        /* Стиль для модального вікна */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            border: 3px solid #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
     </style>
     <script>
         // Scroll Animation Script
@@ -350,22 +276,13 @@
     
     <!-- Карикатура і текст -->
     <div class="section-with-image">
-        <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1083).png"
-            alt="Фото депутатів" class="clickable-image">
-            <div class="zoom-icon">+</div>
-        </div>
+        <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1083).png" alt="Фото депутатів">
         <div class="text">
             <strong>Запрошуємо Вас до нашої галереї!</strong><br>
             На цій картині ми можемо побачити депутатів, за якими під пильним, скрупульозним контролем спостерігають велетенські грошові мішки. Ще у далекому 1889 році у сатиричному журналі <i>Puck</i> редактори опублікували роботу карикатуриста Джозефа Кеплера під назвою "<i>Боси Сенату</i>".<br><br>
             Пройшло більше 130 років: США займають 25 місце за індексом сприйняття корупції, а Україна топчеться на жалюгідному 104 пункті. Нас обігнали Ефіопія, Танзанія, Куба та ще 100 країн світу. Але чому так сталося? Що і коли пішло не так? У який момент нація повернула не туди? Кому це було вигідно? І, найголовніше, як вирватися із цієї злиденної, сороміцької системи?<br><br>
             Можливою причиною наших проблем можуть бути бурхливі дев'яності, адже саме тоді на найвище крісло країни сів колишній компартієць, який щиросердно позбувся ядерного арсеналу та віддав своїм друзям найбільші державні компанії. Про все це у нашому матеріалі про 90-ті
         </div>
-    </div>
-    
-        <!-- Модальне вікно -->
-    <div id="image-modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-image">
     </div>
     
     <section id="elections-1991" class="section-with-content">
@@ -376,18 +293,10 @@
             <p>Про те, що вибори президента були демократичними, сумнівів нема. Але чому ми вибрали колишнього компартійця, замість дисидента?</p>
         </div>
         <div class="image-content">
-            <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Resolution-2.png"
-                alt="Resolution" class="clickable-image">
-            <div class="zoom-icon">+</div>
+            <img src="https://raw.githubusercontent.com/MaksymSharan/MaksymSharan.github.io/main/Resolution-2.png" alt="Постанова 1991">
         </div>
-        </div>
-
-        <!-- Модальне вікно -->
-    <div id="image-modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-image">
     </div>
-        </section>
+</section>
     
     <section id="nuclear-disarmament">
         <h2>Добровільне Ядерне Роззброєння</h2>
