@@ -26,7 +26,7 @@
             transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
-            object-fit: fill;
+            object-fit: cover;
         }
 
         /* Overlay Text */
@@ -77,13 +77,28 @@
         /* Header and Navigation */
         header {
             background-color: #1a1a1a;
-            padding: 20px 0;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        
         nav ul {
             list-style: none;
             padding: 0;
@@ -96,10 +111,9 @@
         nav ul li a {
             color: #ffd700;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            padding: 10px 20px;
-            border: 2px solid #ffd700;
+            padding: 10px 15px;
             border-radius: 5px;
             background-color: transparent;
             transition: all 0.3s ease;
@@ -110,69 +124,53 @@
             color: #1a1a1a;
         }
 
+        /* Centered Sections */
         section {
-            padding: 50px;
+            padding: 20px;
             margin: 20px auto;
             background-color: #faf7f0;
             border-radius: 10px;
             border: 1px solid #d4af37;
             width: 80%;
-            opacity: 1;
-            transform: translateY(50px);
-            transition: all 0.7s ease-in-out;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            color: #f5e1b5;
-            text-align: center;
-            padding: 10px;
+            max-width: 1200px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
     /* Секція із зображенням і текстом */
         .section-with-image {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            margin: 50px auto;
-            padding: 20px;
-            border: 2px solid #d4af37;
-            background-color: #faf7f0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            margin: 20px auto;
+            gap: 20px
         }
 
         .section-with-image img {
-            flex: 1;
-            max-width: 48%;
-            height: auto;
-            margin-right: 2%;
+            max-width: 90%;
             border: 2px solid #d4af37;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .section-with-image .text {
-            flex: 1;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            margin-left: 2%;
+    .section-with-image img {
+        max-width: 90%;
+        border: 2px solid #d4af37;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .section-with-image .text strong {
-            font-size: 22px;
-            color: #a52a2a;
-        }
+      .section-with-image .text {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        color: #f5e1b5;
+        text-align: center;
+        padding: 10px;
+    }
 
         /* Загальний стиль для секції */
     .section-with-content {
@@ -215,103 +213,36 @@
     }
 
     /* Адаптація для планшетів (до 768px) */
-@media (max-width: 768px) {
-    /* Навігація у два ряди */
-    nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
+/* Responsive Design */
+    @media (max-width: 768px) {
+        .section {
+            width: 90%;
+        }
+
+        nav ul {
+            justify-content: center;
+        }
+
+        nav ul li a {
+            font-size: 16px;
+        }
     }
 
-    nav ul li {
-        width: 45%;
-        text-align: center;
-    }
+    @media (orientation: landscape) {
+        .section-with-image {
+            flex-direction: row;
+            align-items: flex-start;
+        }
 
-    /* Відео: зменшення висоти */
-    .fullscreen-video {
-        height: 70vh;
-    }
+        .section-with-image img {
+            max-width: 50%;
+        }
 
-    .fullscreen-video video {
-        object-fit: cover;
+        .section-with-image .text {
+            max-width: 50%;
+        }
     }
-
-    .overlay-text {
-        font-size: 28px;
-        padding: 15px;
-    }
-
-    /* Секції з текстом та зображеннями */
-    .section-with-image {
-        flex-direction: column;
-    }
-
-    .section-with-image img {
-        max-width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .section-with-image .text {
-        margin-left: 0;
-        text-align: justify;
-    }
-
-    /* Секція "Вибори 1991-го" */
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .content-container .text-content {
-        margin-bottom: 20px;
-        text-align: justify;
-    }
-
-    .content-container .image-content img {
-        max-width: 100%;
-    }
-}
-
-/* Адаптація для смартфонів (до 576px) */
-@media (max-width: 576px) {
-    /* Навігація у два ряди */
-    nav ul {
-        gap: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    /* Відео: компактне відображення */
-    .fullscreen-video {
-        height: 60vh;
-    }
-
-    /* Секції: повністю вертикальні */
-    .section-with-image {
-        padding: 15px;
-    }
-
-    .section-with-image img {
-        max-width: 100%;
-        margin: 0 0 15px;
-    }
-
-    .section-with-image .text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .content-container {
-        gap: 15px;
-    }
-
-    .content-container .text-content {
-        font-size: 16px;
-    }
-}
-    </style>
+</style>
     <script>
         // Scroll Animation Script
         document.addEventListener('scroll', () => {
