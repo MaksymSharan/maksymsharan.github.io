@@ -1,163 +1,409 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Модальне вікно з галереєю</title>
+    <title>Переломні Роки України</title>
     <style>
-        /* Базові стилі для галереї */
-        .gallery {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px;
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f0;
         }
 
-        .gallery img {
-            width: 200px;
-            height: auto;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Стилі модального вікна */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
+        /* Fullscreen Video */
+        .fullscreen-video {
             position: relative;
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        .modal img {
+            height: 100vh;
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            overflow: hidden;
         }
 
-        .close-button {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 30px;
-            height: 30px;
-            background: #fff;
-            border: none;
-            border-radius: 50%;
-            font-size: 18px;
-            cursor: pointer;
-            text-align: center;
-            line-height: 30px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .navigation {
+        .fullscreen-video video {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.5);
-            border: none;
-            font-size: 20px;
-            padding: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        /* Overlay Text */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f5e1b5;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Scroll Down Icon */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #f5e1b5;
+            animation: bounce 2s infinite;
             cursor: pointer;
-            z-index: 1001;
+            text-align: center;
         }
 
-        .navigation.prev {
-            left: -50px;
+        .scroll-down span {
+            display: block;
+            font-size: 14px;
         }
 
-        .navigation.next {
-            right: -50px;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
+
+        /* Header and Navigation */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #ffd700;
+            border-radius: 5px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffd700;
+            color: #1a1a1a;
+        }
+
+        section {
+            padding: 50px;
+            margin: 20px auto;
+            background-color: #faf7f0;
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            width: 80%;
+            opacity: 1;
+            transform: translateY(50px);
+            transition: all 0.7s ease-in-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #f5e1b5;
+            text-align: center;
+            padding: 10px;
+        }
+
+    /* Секція із зображенням і текстом */
+        .section-with-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #d4af37;
+            background-color: #faf7f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+        }
+
+        .section-with-image img {
+            flex: 1;
+            max-width: 48%;
+            height: auto;
+            margin-right: 2%;
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-with-image .text {
+            flex: 1;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            margin-left: 2%;
+        }
+
+        .section-with-image .text strong {
+            font-size: 22px;
+            color: #a52a2a;
+        }
+
+        /* Загальний стиль для секції */
+    .section-with-content {
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid #d4af37;
+        background-color: #faf7f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Контейнер для тексту та зображення */
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    /* Стиль для тексту */
+    .text-content {
+        flex: 1;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+        font-family: 'Georgia', serif;
+    }
+
+    /* Стиль для зображення */
+    .image-content img {
+        max-width: 300px; /* Ширина зображення */
+        height: auto;
+        border: 2px solid #d4af37;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Адаптація для планшетів (до 768px) */
+@media (max-width: 768px) {
+    /* Навігація у два ряди */
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav ul li {
+        width: 45%;
+        text-align: center;
+    }
+
+    /* Відео: зменшення висоти */
+    .fullscreen-video {
+        height: 70vh;
+    }
+
+    .fullscreen-video video {
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        font-size: 28px;
+        padding: 15px;
+    }
+
+    /* Секції з текстом та зображеннями */
+    .section-with-image {
+        flex-direction: column;
+    }
+
+    .section-with-image img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .section-with-image .text {
+        margin-left: 0;
+        text-align: justify;
+    }
+
+    /* Секція "Вибори 1991-го" */
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-container .text-content {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .content-container .image-content img {
+        max-width: 100%;
+    }
+}
+
+/* Адаптація для смартфонів (до 576px) */
+@media (max-width: 576px) {
+    /* Навігація у два ряди */
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    /* Відео: компактне відображення */
+    .fullscreen-video {
+        height: 60vh;
+    }
+
+    /* Секції: повністю вертикальні */
+    .section-with-image {
+        padding: 15px;
+    }
+
+    .section-with-image img {
+        max-width: 100%;
+        margin: 0 0 15px;
+    }
+
+    .section-with-image .text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .content-container {
+        gap: 15px;
+    }
+
+    .content-container .text-content {
+        font-size: 16px;
+    }
+}
     </style>
-</head>
-<body>
-    <!-- Галерея -->
-    <div class="gallery">
-        <img src="image1.jpg" alt="Зображення 1">
-        <img src="image2.jpg" alt="Зображення 2">
-        <img src="image3.jpg" alt="Зображення 3">
-    </div>
-
-    <!-- Модальне вікно -->
-    <div class="modal">
-        <button class="close-button">✖</button>
-        <button class="navigation prev">⟨</button>
-        <button class="navigation next">⟩</button>
-        <div class="modal-content">
-            <img src="" alt="Перегляд зображення">
-        </div>
-    </div>
-
     <script>
-        // Отримання елементів
-        const gallery = document.querySelectorAll('.gallery img');
-        const modal = document.querySelector('.modal');
-        const modalImg = modal.querySelector('img');
-        const closeButton = modal.querySelector('.close-button');
-        const prevButton = modal.querySelector('.prev');
-        const nextButton = modal.querySelector('.next');
-        
-        let currentIndex = 0;
+        // Scroll Animation Script
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
 
-        // Відкрити модальне вікно
-        gallery.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                currentIndex = index;
-                openModal(img.src);
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
             });
         });
 
-        function openModal(src) {
-            modalImg.src = src;
-            modal.classList.add('active');
+        // Scroll Down Button Script
+        function scrollToContent() {
+            const nextSection = document.querySelector('header');
+            nextSection.scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Закрити модальне вікно
-        closeButton.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        // Перехід між зображеннями
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-            modalImg.src = gallery[currentIndex].src;
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % gallery.length;
-            modalImg.src = gallery[currentIndex].src;
-        });
-
-        // Закриття модального вікна по кліку поза зображенням
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
     </script>
+</head>
+<body>
+    <!-- Fullscreen Video -->
+    <div class="fullscreen-video">
+        <video autoplay muted loop>
+            <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4"/>
+            Ваш браузер не підтримує HTML5 відео.
+        </video>
+        <div class="overlay-text">Переломні Роки України</div>
+        <div class="scroll-down" onclick="scrollToContent()">
+            ↓
+            <span>Прокрутіть вниз</span>
+        </div>
+    </div>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#elections-1991">Вибори 1991-го</a></li>
+                <li><a href="#nuclear-disarmament">Ядерне Роззброєння</a></li>
+                <li><a href="#blasco">BLASCO</a></li>
+                <li><a href="#privatization">Приватизація</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Карикатура і текст -->
+    <div class="section-with-image">
+        <img src="https://maksymsharan.github.io/Знімок екрана (1083).png" alt="Фото депутатів">
+        <div class="text">
+            На цій картині ми можемо побачити депутатів, за якими під пильним, скрупульозним контролем спостерігають велетенські грошові мішки. Ще у далекому 1889 році у сатиричному журналі <i>Puck</i> редактори опублікували роботу карикатуриста Джозефа Кеплера під назвою "<i>Боси Сенату</i>".<br><br>
+            Пройшло більше 130 років: США займають 25 місце за індексом сприйняття корупції, а Україна топчеться на жалюгідному 104 пункті. Нас обігнали Ефіопія, Танзанія, Куба та ще 100 країн світу. Але чому так сталося? Що і коли пішло не так? У який момент нація повернула не туди? Кому це було вигідно? І, найголовніше, як вирватися із цієї злиденної, сороміцької системи?<br><br>
+            Можливою причиною наших проблем можуть бути бурхливі дев'яності, адже саме тоді на найвище крісло країни сів колишній компартієць, який щиросердно позбувся ядерного арсеналу та віддав своїм друзям найбільші державні компанії. Про все це у нашому матеріалі про 90-ті
+        </div>
+    </div>
+
+    <section id="elections-1991" class="section-with-content">
+    <div class="content-container">
+        <div class="text-content">
+            <h2>Вибори 1991-го</h2>
+            <p>5 липня 1991 року депутати Верховної Ради створили посаду президента, того ж дня парламентарі підписали Постанову про вибори Президента Української РСР. Через 7 тижнів, 24 серпня, Леонід Кравчук просить депутатів проголосувати про затвердження дати проведення Всеукраїнського референдуму щодо проголошення незалежності. Ці два визначальні для нації волевиявлення він хоче провести в один день (хіба що зміниться назва виборів: з «Президента УРСР» на «Президента України»). Мабуть що, Леонід Макарович у той момент турбувався, щоб либонь українці не перевтомилися два, а то й три рази йти голосувати на дільниці.</p>
+            <p>Насправді НІ! Події 1991 року, як би це дивно не звучало, були використані у політичних цілях. Це яскравий приклад вдалої політичної стратегії. Тема незалежності була головною ідеєю для народу, а той, хто асоціювався з її проголошенням, автоматично здобував підтримку. Це давало значну перевагу Леоніду Кравчуку як спікеру, який очолював республіканський парламент під час ухвалення Постанови Верховної Ради про проголошення незалежності та Акту з аналогічною назвою.</p>
+            <p>Дуже показовим є й аргумент щодо різниці між політичним бекграундом Леоніда Кравчука і його головного опонента В'ячеслава Чорновола. Кравчук, як виходець із компартійної системи, мав доступ до ресурсів та зв’язків і досить непогано розумів механізми управління. Чорновіл, хоч і був моральним авторитетом для багатьох, залишався «незручним» кандидатом для тієї частини еліт, які хотіли зберегти свій вплив і уникнути радикальних змін.</p>
+            <p>Варто згадати і те, що Леонід Кравчук, будучи майстром ідеологічної роботи у Радянському Союзі, умів працювати із суспільною думкою та формувати потрібний імідж. Проголошення незалежності стало вигідним політичним кроком, який переконав більшість, що саме він найкраще підходить для керівництва новою державою. Водночас, Кравчук не був надто радикальним, і це приваблювало тих, хто побоювався надто швидких змін. Не можна сказати, що це був добре продуманий політтехнологічний хід, але трагедія у тому, що він спрацював. Поєднання референдуму та виборів, уміння Кравчука виглядати «об'єднувачем нації» та його досвід у радянській системі дали йому перевагу.</p>
+            <p>Восени того ж таки 1991 року, буквально за декілька тижнів до виборів, вийшов компліментарний мініфільм «Сила позиції» про головного героя нашого матеріалу. У фільмі показують як Кравчука обступають люди, як він з ними розмовляє, вислуховує їх; як виголошує палкі промови про нелегку історичну долю України; як всіх і всюди розуміє. Цей мініфільм виглядає як вдало зрежисована політична реклама. У фільмі Кравчук приміряє на себе образ морального, історичного та народного лідера. Знімальна група зображує його на фоні рідної землі, серед простих людей, створює образ «свого», зрозумілого народові. Він виступає перед односельчанами, згадує про дитинство, зустрічається з працівниками заводів, не забуває сказати про красу українських жінок. У фільмі згадуються низькі зарплати, злидні, що контрастує з багатствами української землі. Кравчук демонструє розуміння ситуації простого народу. Також акцентується увага на соціальних та економічних труднощах 1980-х: начебто Кравчук приніс порядок та спокій союзній республіці. Цей 18-хвилинний кіноматографічний шедевр чудово виконує політтехнологічну роль. Фільм героїзує Кравчука, показуючи його як лідера, який забезпечив мирний перехід до незалежності та фокусується на простих людях і їхніх звичайних, буденних потребах. Це все у купі створює у глядача відчуття, що Кравчук наш захисник. Звичайно що це мало значний вплив на виборців, які сприймали Леоніда Кравчука не лише як політика, але й як символ епохи змін. У контексті емоційної напруги 1991 року така подача інформації безперечно працювала на його користь.</p>
+            <p>Але це все була всього лише гарно знята картинка. Після приходу до влади Кравчук не тільки не зламав стару систему, але й дозволив їй адаптуватися до нових умов. Усе це заклало основи для корупції, олігархізації та слабкої державності, які стали хронічними проблемами України. Його зв’язки з радянською номенклатурою дали можливість зберегти стару еліту при владі.</p>
+            <p>1 грудня 1991 року Кравчук отримав понад 61% голосів виборців, його головний опонент Чорновіл – заледве 23%. Льоня, навіть не знаємо, чи можна його так назвати, пробуде на посаді всього лише якихось 32 місяці, але цього буде достатньо, щоб створити в Україні систему, де одні живуть у бідності, а інші – обкрадають державні компанії; де одні волочать кравчучки, а інші – відкривають багатомільйонні рахунки в іноземних банках; де одні живуть за гроші мільйонів інших.</p>
+        </div>
+        <div class="image-content">
+            <img src="https://maksymsharan.github.io/Resolution-2.png" alt="Постанова 1991">
+        </div>
+    </div>
+</section>
+
+    <section id="nuclear-disarmament">
+        <h2>Добровільне Ядерне Роззброєння</h2>
+        <p>Текст про ядерне роззброєння...</p>
+    </section>
+
+    <section id="blasco">
+        <h2>Чорноморське Пароплавство BLASCO</h2>
+        <p>Текст про BLASCO...</p>
+    </section>
+
+    <section id="privatization">
+        <h2>Приватизація 90-х</h2>
+        <p>Текст про приватизацію...</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Українські Переломні Роки</p>
+    </footer>
 </body>
 </html>
