@@ -301,9 +301,12 @@
         .navigation.next {
             right: -50px;
         }
-    </style>
+
+        .modal img {
+    transition: opacity 0.3s ease-in-out;
+        }
+
 </head>
-<body>
     <!-- Галерея -->
     <div class="gallery">
         <img src="https://maksymsharan.github.io/Resolution-2.png" alt="Зображення 1">
@@ -339,11 +342,6 @@
             });
         });
 
-        function openModal(src) {
-            modalImg.src = src;
-            modal.classList.add('active');
-        }
-
         // Закрити модальне вікно
         closeButton.addEventListener('click', () => {
             modal.classList.remove('active');
@@ -370,7 +368,7 @@
 
     function openModal(src) {
         if (!src) {
-            console.error('Немає шляху до зображення');
+            console.error('https://maksymsharan.github.io/Resolution-2.png');
             return;
         }
         modalImg.src = src;
@@ -380,29 +378,12 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             modal.classList.remove('active');
+        } else if (e.key === 'ArrowLeft') {
+            prevButton.click();
+        } else if (e.key === 'ArrowRight') {
+            nextButton.click();
         }
     });
-
-    .modal img {
-    transition: opacity 0.3s ease-in-out;
-}
-
-    function updateCounter() {
-        document.querySelector('.image-counter').textContent = `${currentIndex + 1} із ${gallery.length}`;
-    }
-    
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-        modalImg.src = gallery[currentIndex].src;
-        updateCounter();
-    });
-    
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % gallery.length;
-        modalImg.src = gallery[currentIndex].src;
-        updateCounter();
-    });
-
     
     /* Адаптація для планшетів (до 768px) */
 @media (max-width: 768px) {
