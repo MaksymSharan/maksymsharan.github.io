@@ -214,19 +214,103 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Адаптація для мобільних пристроїв */
-    @media (max-width: 576px) {
-        .content-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+    /* Адаптація для планшетів (до 768px) */
+@media (max-width: 768px) {
+    /* Навігація у два ряди */
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
-        .image-content img {
-            max-width: 100%;
-            margin-top: 0 auto 20px;
-        }
-    }     
+    nav ul li {
+        width: 45%;
+        text-align: center;
+    }
+
+    /* Відео: зменшення висоти */
+    .fullscreen-video {
+        height: 70vh;
+    }
+
+    .fullscreen-video video {
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        font-size: 28px;
+        padding: 15px;
+    }
+
+    /* Секції з текстом та зображеннями */
+    .section-with-image {
+        flex-direction: column;
+    }
+
+    .section-with-image img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .section-with-image .text {
+        margin-left: 0;
+        text-align: justify;
+    }
+
+    /* Секція "Вибори 1991-го" */
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-container .text-content {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .content-container .image-content img {
+        max-width: 100%;
+    }
+}
+
+/* Адаптація для смартфонів (до 576px) */
+@media (max-width: 576px) {
+    /* Навігація у два ряди */
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    /* Відео: компактне відображення */
+    .fullscreen-video {
+        height: 60vh;
+    }
+
+    /* Секції: повністю вертикальні */
+    .section-with-image {
+        padding: 15px;
+    }
+
+    .section-with-image img {
+        max-width: 100%;
+        margin: 0 0 15px;
+    }
+
+    .section-with-image .text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .content-container {
+        gap: 15px;
+    }
+
+    .content-container .text-content {
+        font-size: 16px;
+    }
+}
     </style>
     <script>
         // Scroll Animation Script
