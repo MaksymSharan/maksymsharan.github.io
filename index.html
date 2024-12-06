@@ -214,6 +214,36 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+    .image-content {
+    position: relative;
+    flex: 1;
+}
+
+.image-content img {
+    width: 45%;
+    max-width: 100%;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-content .overlapping-image {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.text-content, .continuation-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    font-family: 'Georgia', serif;
+}
+        
     /* Адаптація для планшетів (до 768px) */
 @media (max-width: 768px) {
     /* Навігація у два ряди */
@@ -382,7 +412,12 @@
         </div>
         <div class="image-content">
             <img src="https://maksymsharan.github.io/Resolution-2.png" alt="Постанова 1991">
+            <img src="https://maksymsharan.github.io/Doc-2.png" alt="Документ" class="overlapping-image">
         </div>
+    </div>
+            <p class="continuation-text">
+            Продовження тексту, що доповнює зміст секції, після фотографій. Він описує важливість рішень і наслідки для сучасної України.
+        </p>
     </div>
 </section>
 
