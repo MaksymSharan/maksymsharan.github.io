@@ -1,10 +1,10 @@
-/* Основні стилі */
+/* Глобальні стилі */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
     overflow-x: hidden;
-    background-color: #f4f1e5;
+    background-color: #fdfaf0;
 }
 
 .section {
@@ -13,43 +13,36 @@ body, html {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
 }
 
-/* Обкладинка книги */
+/* Обкладинка */
 #cover {
     background: url('cover-texture.jpg') no-repeat center center / cover;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .book-cover {
+    position: relative;
     width: 90%;
     height: 90%;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    position: relative;
-    background: #8B4513;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 10px solid #6b4226;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    background-color: #6b4226;
     overflow: hidden;
 }
 
-.video-container video {
-    width: 80%;
-    border: 10px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.book-cover video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.scroll-indicator {
+.scroll-hint {
     position: absolute;
     bottom: 20px;
     font-size: 1.2rem;
-    color: white;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     animation: bounce 2s infinite;
 }
 
@@ -58,29 +51,29 @@ body, html {
     50% { transform: translateY(-10px); }
 }
 
-/* Сторінки книги */
+/* Сторінки */
 .book-page {
     background: url('paper-texture.jpg') no-repeat center center / cover;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.book-page img {
-    max-width: 90%;
-    border: 10px solid #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.text-content {
+.page-content {
     max-width: 80%;
+    text-align: justify;
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #4d4b47;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.book-page img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 5px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
