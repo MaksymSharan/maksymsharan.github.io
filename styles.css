@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     font-family: 'Georgia', serif;
     overflow-x: hidden;
-    background-color: #fdfaf0;
+    background-color: #f8ecd4;
 }
 
 .section {
@@ -13,6 +13,7 @@ body, html {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 /* Обкладинка */
@@ -24,11 +25,19 @@ body, html {
     position: relative;
     width: 90%;
     height: 90%;
-    border: 10px solid #6b4226;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    background-color: #6b4226;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.book-cover .ornament {
+    border: 15px solid #6b4226;
+    border-image: url('ornament-texture.png') 30 round;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book-cover video {
@@ -37,43 +46,32 @@ body, html {
     object-fit: cover;
 }
 
-.scroll-hint {
-    position: absolute;
-    bottom: 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
 /* Сторінки */
 .book-page {
     background: url('paper-texture.jpg') no-repeat center center / cover;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transform-origin: left center;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .page-content {
-    max-width: 80%;
+    max-width: 70%;
     text-align: justify;
     background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    font-size: 1.1rem;
-    line-height: 1.6;
 }
 
 .book-page img {
     max-width: 100%;
     border-radius: 10px;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.book-page p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a3c2f;
 }
