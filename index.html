@@ -12,9 +12,31 @@
             margin: 0;
             padding: 0;
         }
-        .container {
-            text-align: center;
-            padding: 20px;
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .button-container {
             display: inline-block;
@@ -25,6 +47,7 @@
             font-size: 16px;
             font-weight: bold;
             color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
             transition: background-color 0.3s, color 0.3s;
         }
         .button-container:hover {
@@ -64,30 +87,37 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="button-container" onclick="toggleText()">
-            Дізнатися більше
-            <span class="arrow">⬇</span>
-        </div>
-        <div class="hidden-text" id="hiddenText">
-            <p>«На початку було Слово, і Слово було у Бога, і Слово було Бог» – так відкривається Біблія, описуючи народження світу. Але якщо би 1990-ті в Україні мали свою Книгу Буття, їх перший вірш звучав би інакше: «На початку був хаос». У цих словах є уся сутність того часу: стара система різко згасала, а новий демократичний світ тільки-тільки почав народжуватись.</p>
-            <p>Це був час дуже великих очікувань і ще більших розчарувань. Після розвалу Радянського Союзу незалежність подарувала українцям надію, але дуже швидко прийшла невизначеність. У хаосі 90-х років почали формуватись тріщини, які згодом перетворилися на безодні.</p>
-            <p>1990-ті стали часом, коли нова держава залишилася без чіткої відповіді на питання: хто ми і куди йдемо? Це був період, коли у вирі кримінальної романтики та політичних інтриг губилася сама ідея справжньої свободи. Золото незалежності змішувалося з болотом корупції, і ціною цього стали людські долі, соціальна дезінтеграція, а згодом, через три десятки років – кров. Кожен незакритий рахунок 90-х, кожне недороблене рішення і кожна проігнорована тріщина створювали передумови для сьогоднішньої боротьби за виживання нації.</p>
-            <p>Це розслідування є всього лише спробою зануритися у коріння сучасної трагедії. Ми пройдемо крізь архіви, свідчення очевидців та історичні документи, щоб відповісти на запитання: якою ціною народжувалася нова Україна та які тіні з того часу досі стоять за нашими спинами?</p>
-            <button class="secondary-button" onclick="toggleText()">Приховати</button>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4">
+            Ваш браузер не підтримує відтворення відео.
+        </video>
+        <div class="overlay">
+            <div class="button-container" onclick="toggleContent()">
+                Дізнатися більше
+                <span class="arrow">⬇</span>
+            </div>
         </div>
     </div>
-    <script>
-        function toggleText() {
-            const hiddenText = document.getElementById("hiddenText");
-            const buttonContainer = document.querySelector(".button-container");
+    <div class="hidden-text" id="hiddenContent">
+        <p>«На початку було Слово, і Слово було у Бога, і Слово було Бог» – так відкривається Біблія, описуючи народження світу. Але якщо би 1990-ті в Україні мали свою Книгу Буття, їх перший вірш звучав би інакше: «На початку був хаос». У цих словах є уся сутність того часу: стара система різко згасала, а новий демократичний світ тільки-тільки почав народжуватись.</p>
+        <p>Це був час дуже великих очікувань і ще більших розчарувань. Після розвалу Радянського Союзу незалежність подарувала українцям надію, але дуже швидко прийшла невизначеність. У хаосі 90-х років почали формуватись тріщини, які згодом перетворилися на безодні.</p>
+        <p>1990-ті стали часом, коли нова держава залишилася без чіткої відповіді на питання: хто ми і куди йдемо? Це був період, коли у вирі кримінальної романтики та політичних інтриг губилася сама ідея справжньої свободи. Золото незалежності змішувалося з болотом корупції, і ціною цього стали людські долі, соціальна дезінтеграція, а згодом, через три десятки років – кров. Кожен незакритий рахунок 90-х, кожне недороблене рішення і кожна проігнорована тріщина створювали передумови для сьогоднішньої боротьби за виживання нації.</p>
+        <p>Це розслідування є всього лише спробою зануритися у коріння сучасної трагедії. Ми пройдемо крізь архіви, свідчення очевидців та історичні документи, щоб відповісти на запитання: якою ціною народжувалася нова Україна та які тіні з того часу досі стоять за нашими спинами?</p>
+        <button class="secondary-button" onclick="toggleContent()">Приховати</button>
+    </div>
 
-            if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
-                hiddenText.style.display = "block";
-                buttonContainer.style.display = "none";
+    <script>
+        function toggleContent() {
+            const hiddenContent = document.getElementById("hiddenContent");
+            const videoContainer = document.querySelector(".video-container");
+
+            if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+                hiddenContent.style.display = "block";
+                videoContainer.style.display = "none";
             } else {
-                hiddenText.style.display = "none";
-                buttonContainer.style.display = "inline-block";
+                hiddenContent.style.display = "none";
+                videoContainer.style.display = "flex";
             }
         }
     </script>
