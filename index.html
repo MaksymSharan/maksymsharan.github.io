@@ -169,7 +169,6 @@
     .section-with-content {
         margin: 50px auto;
         padding: 20px;
-        border: 2px solid #d4af37;
         background-color: #faf7f0;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -200,7 +199,7 @@
     .image-content img {
         max-width: 300px; /* Ширина зображення */
         height: auto;
-        border: 2px solid #d4af37;
+        border: none;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -220,7 +219,7 @@
         height: auto;
         cursor: zoom-in;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 2px solid #d4af37;
+        border: none;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -272,169 +271,83 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 1001;
+        transition: background-color 0.3s ease;
     }
     
-    /* Трикутна кнопка для переходу до іншого фото */
-    .modal .next-btn {
-        position: absolute;
-        right: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        border: none;
-        border-left: 30px solid #fff;
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
-        cursor: pointer;
-        z-index: 1001;
+    /* Зміна кольору кнопки закриття при наведенні */
+    .modal .close-btn:hover {
+        background-color: #ff6347;
     }
 
-        @media (max-width: 768px) {
-    html {
-        font-size: 90%; /* 1rem = 14.4px */
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Адаптація для мобільних пристроїв (менше 768px) */
-@media (max-width: 768px) {
-    
-    .content-container {
-        flex-direction: column; /* Текст і зображення будуть розташовані вертикально */
-        align-items: center;
-    }
-
-    .text-content {
-        font-size: 16px; /* Зменшуємо розмір шрифта */
-        text-align: center; /* Вирівнюємо текст по центру */
-    }
-
-    .image-content img {
-        max-width: 100%; /* Зображення займають всю ширину контейнера */
-    }
-
-    .photo-container {
-        flex-direction: column; /* Фотографії будуть вертикально */
-        justify-content: center;
-        gap: 0; /* Прибираємо перекриття */
-    }
-
-    .photo-container img {
-        width: 100%; /* Фотографії займають всю ширину */
-        margin-bottom: 20px; /* Відступи між фотографіями */
-    }
-
-    .modal img {
-        width: 90%; /* Зображення у модальному вікні буде меншого розміру */
-        max-height: 70%; /* Менше максимальне значення по висоті */
-    }
-
-    .modal .close-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 18px; /* Зменшуємо розмір кнопки закриття */
-    }
-}
-
-/* Адаптація для планшетів (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    
-    .content-container {
-        flex-direction: row; /* Текст і зображення по горизонталі */
-    }
-
-    .text-content {
-        font-size: 17px; /* Трохи зменшуємо розмір шрифта */
-    }
-
-    .photo-container img {
-        width: 80%; /* Зменшуємо розмір фотографій */
-    }
-}
-        
     </style>
-    <script>
-        
-        // Scroll Animation Script /*Анімація під час прокручування*/
-        document.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    section.classList.add('visible');
-                }
-            });
-        });
-
-        // Scroll Down Button Script /*Це також плавне прокручування*/
-        function scrollToContent() {
-            const nextSection = document.querySelector('header');
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 </head>
 <body>
-    <!-- Fullscreen Video -->
     <div class="fullscreen-video">
         <video autoplay muted loop>
-            <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4"/>
+            <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4">
         </video>
         <div class="overlay-text">Переломні Роки України</div>
-        <div class="scroll-down" onclick="scrollToContent()">
-            ↓
-            <span>Прокрутіть вниз</span>
-        </div>
+        <div class="scroll-down"><span>⬇</span> Прокрутити</div>
     </div>
 
-    <!-- Header and Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="#elections-1991">Вибори 1991-го</a></li>
-                <li><a href="#nuclear-disarmament">Ядерне Роззброєння</a></li>
-                <li><a href="#blasco">BLASCO</a></li>
-                <li><a href="#privatization">Приватизація</a></li>
+                <li><a href="#section1">Розділ 1</a></li>
+                <li><a href="#section2">Розділ 2</a></li>
+                <li><a href="#section3">Розділ 3</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="elections-1991" class="section-with-content">
-    <div class="content-container">
-        <div class="text-content">
-            <h2>Вибори 1991-го</h2>
-            <p>5 липня 1991 року депутати Верховної Ради створили посаду президента, того ж дня парламентарі підписали Постанову про вибори Президента Української РСР. Через 7 тижнів, 24 серпня, Леонід Кравчук просить депутатів проголосувати про затвердження дати проведення Всеукраїнського референдуму щодо проголошення незалежності. Ці два визначальні для нації волевиявлення він хоче провести в один день (хіба що зміниться назва виборів: з «Президента УРСР» на «Президента України»). Мабуть що, Леонід Макарович у той момент турбувався, щоб либонь українці не перевтомилися два, а то й три рази йти голосувати на дільниці.</p>
-            <p>Насправді НІ! Події 1991 року, як би це дивно не звучало, були використані у політичних цілях. Це яскравий приклад вдалої політичної стратегії. Тема незалежності була головною ідеєю для народу, а той, хто асоціювався з її проголошенням, автоматично здобував підтримку. Це давало значну перевагу Леоніду Кравчуку як спікеру, який очолював республіканський парламент під час ухвалення Постанови Верховної Ради про проголошення незалежності та Акту з аналогічною назвою.</p>
-            <p>Дуже показовим є й аргумент щодо різниці між політичним бекграундом Леоніда Кравчука і його головного опонента В'ячеслава Чорновола. Кравчук, як виходець із компартійної системи, мав доступ до ресурсів та зв’язків і досить непогано розумів механізми управління. Чорновіл, хоч і був моральним авторитетом для багатьох, залишався «незручним» кандидатом для тієї частини еліт, які хотіли зберегти свій вплив і уникнути радикальних змін.</p>
-            <p>Варто згадати і те, що Леонід Кравчук, будучи майстром ідеологічної роботи у Радянському Союзі, умів працювати із суспільною думкою та формувати потрібний імідж. Проголошення незалежності стало вигідним політичним кроком, який переконав більшість, що саме він найкраще підходить для керівництва новою державою. Водночас, Кравчук не був надто радикальним, і це приваблювало тих, хто побоювався надто швидких змін. Не можна сказати, що це був добре продуманий політтехнологічний хід, але трагедія у тому, що він спрацював. Поєднання референдуму та виборів, уміння Кравчука виглядати «об'єднувачем нації» та його досвід у радянській системі дали йому перевагу.</p>
-            <p>Восени того ж таки 1991 року, буквально за декілька тижнів до виборів, вийшов компліментарний мініфільм «Сила позиції» про головного героя нашого матеріалу. У фільмі показують як Кравчука обступають люди, як він з ними розмовляє, вислуховує їх; як виголошує палкі промови про нелегку історичну долю України; як всіх і всюди розуміє. Цей мініфільм виглядає як вдало зрежисована політична реклама. У фільмі Кравчук приміряє на себе образ морального, історичного та народного лідера. Знімальна група зображує його на фоні рідної землі, серед простих людей, створює образ «свого», зрозумілого народові. Він виступає перед односельчанами, згадує про дитинство, зустрічається з працівниками заводів, не забуває сказати про красу українських жінок. У фільмі згадуються низькі зарплати, злидні, що контрастує з багатствами української землі. Кравчук демонструє розуміння ситуації простого народу. Також акцентується увага на соціальних та економічних труднощах 1980-х: начебто Кравчук приніс порядок та спокій союзній республіці. Цей 18-хвилинний кіноматографічний шедевр чудово виконує політтехнологічну роль. Фільм героїзує Кравчука, показуючи його як лідера, який забезпечив мирний перехід до незалежності та фокусується на простих людях і їхніх звичайних, буденних потребах. Це все у купі створює у глядача відчуття, що Кравчук наш захисник. Звичайно що це мало значний вплив на виборців, які сприймали Леоніда Кравчука не лише як політика, але й як символ епохи змін. У контексті емоційної напруги 1991 року така подача інформації безперечно працювала на його користь.</p>
-            <p>Але це все була всього лише гарно знята картинка. Після приходу до влади Кравчук не тільки не зламав стару систему, але й дозволив їй адаптуватися до нових умов. Усе це заклало основи для корупції, олігархізації та слабкої державності, які стали хронічними проблемами України. Його зв’язки з радянською номенклатурою дали можливість зберегти стару еліту при владі.</p>
-            <p>1 грудня 1991 року Кравчук отримав понад 61% голосів виборців, його головний опонент Чорновіл – заледве 23%. Льоня, навіть не знаємо, чи можна його так назвати, пробуде на посаді всього лише якихось 32 місяці, але цього буде достатньо, щоб створити в Україні систему, де одні живуть у бідності, а інші – обкрадають державні компанії; де одні волочать кравчучки, а інші – відкривають багатомільйонні рахунки в іноземних банках; де одні живуть за гроші мільйонів інших.</p>
+    <div class="section-with-image" id="section1">
+        <img src="https://via.placeholder.com/400x300" alt="Зображення 1">
+        <div class="text">
+            <p><strong>Розділ 1:</strong> Це перший розділ з важливими подіями...</p>
         </div>
     </div>
-</section>
 
-    <section id="nuclear-disarmament">
-        <h2>Добровільне Ядерне Роззброєння</h2>
-        <p>Текст про ядерне роззброєння...</p>
-    </section>
+    <div class="section-with-content" id="section2">
+        <div class="content-container">
+            <div class="text-content">
+                <p>Опис події та важливі моменти, що змінили історію...</p>
+            </div>
+            <div class="image-content">
+                <img src="https://via.placeholder.com/300x200" alt="Зображення 2">
+            </div>
+        </div>
+    </div>
 
-    <section id="blasco">
-        <h2>Чорноморське Пароплавство BLASCO</h2>
-        <p>Текст про BLASCO...</p>
-    </section>
+    <div class="section-with-image" id="section3">
+        <div class="photo-container">
+            <img src="https://via.placeholder.com/400x300" alt="Фотографія 1">
+            <img src="https://via.placeholder.com/400x300" alt="Фотографія 2">
+        </div>
+    </div>
+    
+    <!-- Модальне вікно для перегляду фотографій -->
+    <div class="modal" id="modal">
+        <div class="close-btn" id="closeBtn">X</div>
+        <img src="" alt="Фото великого розміру" id="modalImg">
+    </div>
 
-    <section id="privatization">
-        <h2>Приватизація 90-х</h2>
-        <p>Текст про приватизацію...</p>
-    </section>
+    <script>
+        // JavaScript для модального вікна
+        const photos = document.querySelectorAll('.photo-container img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        photos.forEach(photo => {
+            photo.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = photo.src;
+            });
+        });
 
-    <footer>
-        <p>© 2024 Українські Переломні Роки</p>
-    </footer>
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
