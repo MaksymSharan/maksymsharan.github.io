@@ -6,11 +6,128 @@
     <title>Переломні Роки України</title>
     <style>
         /*Тіло веб-сторінки*/
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: #f5f5f0;
-        }
+        /* Базовий стиль для всіх пристроїв */
+            body {
+                margin: 0;
+                font-family: 'Georgia', serif;
+                background-color: #f5f5f0;
+                color: #333;
+                line-height: 1.6;
+            }
+            
+            /* Основний контейнер */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            /* Заголовки */
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Georgia', serif;
+                color: #1a1a1a;
+            }
+            
+            /* Посилання */
+            a {
+                color: #a52a2a;
+                text-decoration: none;
+            }
+            
+            a:hover {
+                color: #d2691e;
+                text-decoration: underline;
+            }
+            
+            /* Кнопки */
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+                background-color: #ffd700;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                color: #1a1a1a;
+                transition: background-color 0.3s ease;
+            }
+            
+            button:hover {
+                background-color: #d4af37;
+            }
+            
+            /* Адаптивні зображення */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            
+            /* Базова структура секцій */
+            section {
+                padding: 20px;
+                margin-bottom: 20px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Flex-контейнер */
+            .flex-container {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            /* Елементи Flex */
+            .flex-item {
+                flex: 1 1 calc(33.333% - 20px); /* Три колонки */
+                background-color: #faf7f0;
+                border: 2px solid #d4af37;
+                padding: 15px;
+                text-align: center;
+                border-radius: 10px;
+            }
+            
+            /* Для мобільних пристроїв */
+            @media (max-width: 768px) {
+                .flex-item {
+                    flex: 1 1 calc(50% - 20px); /* Дві колонки на планшетах */
+                }
+            
+                section {
+                    padding: 15px;
+                }
+            
+                button {
+                    font-size: 14px;
+                    padding: 8px 15px;
+                }
+            }
+            
+            /* Для дуже малих екранів */
+            @media (max-width: 480px) {
+                .flex-item {
+                    flex: 1 1 100%; /* Одна колонка на мобільних */
+                }
+            
+                h1 {
+                    font-size: 24px;
+                }
+            
+                h2 {
+                    font-size: 20px;
+                }
+            
+                button {
+                    font-size: 12px;
+                    padding: 5px 10px;
+                }
+            
+                section {
+                    padding: 10px;
+                    margin-bottom: 15px;
+                }
+            }
 
         /* Fullscreen Video стилізація відео */
         .fullscreen-video {
