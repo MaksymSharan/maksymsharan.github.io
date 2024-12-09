@@ -342,17 +342,57 @@
     }
 }
 
-@media (max-width: 480px) {
-    html {
-        font-size: 80%; /* 1rem = 12.8px */
+/* Адаптація для мобільних пристроїв (менше 768px) */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Текст і зображення будуть розташовані вертикально */
+        align-items: center;
     }
 
-    .container {
-        padding: 10px;
+    .text-content {
+        font-size: 16px; /* Зменшуємо розмір шрифта */
+        text-align: center; /* Вирівнюємо текст по центру */
     }
 
-    nav ul li a {
-        padding: 8px 10px;
+    .image-content img {
+        max-width: 100%; /* Зображення займають всю ширину контейнера */
+    }
+
+    .photo-container {
+        flex-direction: column; /* Фотографії будуть вертикально */
+        justify-content: center;
+        gap: 0; /* Прибираємо перекриття */
+    }
+
+    .photo-container img {
+        width: 100%; /* Фотографії займають всю ширину */
+        margin-bottom: 20px; /* Відступи між фотографіями */
+    }
+
+    .modal img {
+        width: 90%; /* Зображення у модальному вікні буде меншого розміру */
+        max-height: 70%; /* Менше максимальне значення по висоті */
+    }
+
+    .modal .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px; /* Зменшуємо розмір кнопки закриття */
+    }
+}
+
+/* Адаптація для планшетів (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content-container {
+        flex-direction: row; /* Текст і зображення по горизонталі */
+    }
+
+    .text-content {
+        font-size: 17px; /* Трохи зменшуємо розмір шрифта */
+    }
+
+    .photo-container img {
+        width: 80%; /* Зменшуємо розмір фотографій */
     }
 }
         
