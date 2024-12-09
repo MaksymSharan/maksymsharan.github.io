@@ -19,7 +19,7 @@
             width: 100%;
             overflow: hidden;
         }
-
+        /*стилі для відео всередині елемента з класом*/
         .fullscreen-video video {
             position: absolute;
             top: 50%;
@@ -30,7 +30,7 @@
             object-fit: fill;
         }
 
-        /* Overlay Text */
+        /* Overlay Text текстовий елемент поверх відео */
         .overlay-text {
             position: absolute;
             top: 50%;
@@ -45,7 +45,7 @@
             border-radius: 10px;
         }
 
-        /* Scroll Down Icon */
+        /* Scroll Down Icon стралка що підстрибує */
         .scroll-down {
             position: absolute;
             bottom: 20px;
@@ -58,11 +58,13 @@
             text-align: center;
         }
 
+        /* Дочірній елемент прокрутіть вниз*/
         .scroll-down span {
             display: block;
             font-size: 14px;
         }
 
+        /* Анімація підстрибування*/
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateX(-50%) translateY(0);
@@ -75,7 +77,7 @@
             }
         }
 
-        /* Header and Navigation */
+        /* Заголовок переломні роки */
         header {
             background-color: #1a1a1a;
             padding: 20px 0;
@@ -84,7 +86,8 @@
             z-index: 1000;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-
+        
+        /* Смуга навігації */
         nav ul {
             list-style: none;
             padding: 0;
@@ -94,6 +97,7 @@
             gap: 30px;
         }
 
+        /* Стилізація смуги навігації*/
         nav ul li a {
             color: #ffd700;
             text-decoration: none;
@@ -106,6 +110,7 @@
             transition: all 0.3s ease;
         }
 
+        /*Золотий колір при наводженні миші*/
         nav ul li a:hover {
             background-color: #ffd700;
             color: #1a1a1a;
