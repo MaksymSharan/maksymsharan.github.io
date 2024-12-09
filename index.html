@@ -6,122 +6,12 @@
     <title>Переломні Роки України</title>
     <style>
         /*Тіло веб-сторінки*/
-        /* Базовий стиль для всіх пристроїв */
-            body {
-                margin: 0;
-                font-family: 'Georgia', serif;
-                background-color: #f5f5f0;
-                color: #333;
-                text-align: justify;
-                line-height: 1.6;
-            }
-            
-            /* Основний контейнер */
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f0;
+        }
 
-        /*АДАПТАЦІЯ*/
-            /* Для дуже великих екранів (понад 1600px) */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1400px; /* Для великих екранів можна збільшити максимальну ширину */
-        padding: 30px; /* Більше відступів для великих екранів */
-    }
-}
-
-/* Для великих екранів (1200px - 1600px) */
-@media (min-width: 1200px) and (max-width: 1599px) {
-    .container {
-        max-width: 1200px; /* Стандартна максимальна ширина */
-        padding: 25px; /* Відступи середнього розміру */
-    }
-}
-
-/* Для середніх екранів (768px - 1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .container {
-        max-width: 100%; /* Контейнер буде займати всю ширину екрана */
-        padding: 20px; /* Стандартні відступи */
-    }
-}
-
-/* Для маленьких екранів (менше 768px) */
-@media (max-width: 767px) {
-    .container {
-        max-width: 100%; /* Контейнер буде займати всю ширину екрану */
-        padding: 15px; /* Менші відступи для маленьких екранів */
-    }
-}
-        
-            /* Заголовки на ПК */
-            h1, h2, h3, h4, h5, h6 {
-                font-family: 'Georgia', serif;
-                color: #1a1a1a;
-            }
-            
-            /* Посилання */
-            a {
-                color: #a52a2a;
-                text-decoration: none;
-            }
-            
-            a:hover {
-                color: #d2691e;
-                text-decoration: underline;
-            }
-            
-            /* Кнопки */
-            button {
-                font-size: 16px;
-                padding: 10px 20px;
-                background-color: #ffd700;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                color: #1a1a1a;
-                transition: background-color 0.3s ease;
-            }
-            
-            button:hover {
-                background-color: #d4af37;
-            }
-            
-            /* Адаптивні зображення */
-            img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-            }
-            
-            /* Базова структура секцій */
-            section {
-                padding: 20px;
-                margin-bottom: 20px;
-                background-color: #ffffff;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            /* Flex-контейнер */
-            .flex-container {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            
-            /* Елементи Flex */
-            .flex-item {
-                flex: 1 1 calc(33.333% - 20px); /* Три колонки */
-                background-color: #faf7f0;
-                border: 2px solid #d4af37;
-                padding: 15px;
-                text-align: center;
-                border-radius: 10px;
-            }
-        
         /* Fullscreen Video стилізація відео */
         .fullscreen-video {
             position: relative;
@@ -261,6 +151,7 @@
             transition: color 0.3s;
         }
 
+        /* Кремовий колір при наведенні до першої секції*/
         footer a:hover {
             color: #f5e1b5; /* Кремовий колір при наведенні */
         }
@@ -438,107 +329,10 @@
         cursor: pointer;
         z-index: 1001;
     }
-
-    /* Адаптація для планшетів (до 768px) */
-@media (max-width: 768px) {
-    /* Навігація у два ряди */
-    nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    nav ul li {
-        width: 45%;
-        text-align: center;
-    }
-
-    /* Відео: зменшення висоти */
-    .fullscreen-video {
-        height: 70vh;
-    }
-
-    .fullscreen-video video {
-        object-fit: cover;
-    }
-
-    .overlay-text {
-        font-size: 28px;
-        padding: 15px;
-    }
-
-    /* Секції з текстом та зображеннями */
-    .section-with-image {
-        flex-direction: column;
-    }
-
-    .section-with-image img {
-        max-width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .section-with-image .text {
-        margin-left: 0;
-        text-align: justify;
-    }
-
-    /* Секція "Вибори 1991-го" */
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .content-container .text-content {
-        margin-bottom: 20px;
-        text-align: justify;
-    }
-
-    .content-container .image-content img {
-        max-width: 100%;
-    }
-}
-
-/* Адаптація для смартфонів (до 576px) */
-@media (max-width: 576px) {
-    /* Навігація у два ряди */
-    nav ul {
-        gap: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    /* Відео: компактне відображення */
-    .fullscreen-video {
-        height: 60vh;
-    }
-
-    /* Секції: повністю вертикальні */
-    .section-with-image {
-        padding: 15px;
-    }
-
-    .section-with-image img {
-        max-width: 100%;
-        margin: 0 0 15px;
-    }
-
-    .section-with-image .text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .content-container {
-        gap: 15px;
-    }
-
-    .content-container .text-content {
-        font-size: 16px;
-    }
-}
     </style>
     <script>
-        // Scroll Animation Script
+        
+        // Scroll Animation Script /*Анімація під час прокручування*/
         document.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
 
@@ -550,7 +344,7 @@
             });
         });
 
-        // Scroll Down Button Script
+        // Scroll Down Button Script /*Це також плавне прокручування*/
         function scrollToContent() {
             const nextSection = document.querySelector('header');
             nextSection.scrollIntoView({ behavior: 'smooth' });
@@ -558,11 +352,10 @@
     </script>
 </head>
 <body>
-    <!-- Fullscreen Video -->
+    <!-- Fullscreen Video --> /*Повноекранний відеоблок з текстовим накладенням*/
     <div class="fullscreen-video">
         <video autoplay muted loop>
             <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4"/>
-            Ваш браузер не підтримує HTML5 відео.
         </video>
         <div class="overlay-text">Переломні Роки України</div>
         <div class="scroll-down" onclick="scrollToContent()">
@@ -571,7 +364,7 @@
         </div>
     </div>
 
-    <!-- Header and Navigation -->
+    <!-- Header and Navigation --> /*Навігаційне меню*/
     <header>
         <nav>
             <ul>
