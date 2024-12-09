@@ -128,18 +128,32 @@
             transform: translateY(50px);
             transition: all 0.7s ease-in-out;
         }
-            
+
+        /*Додатки до першої секції*/
           section.visible {
             opacity: 1;
             transform: translate(0);
         }
         
+        /*Нижній колонтитул*/
         footer {
             background-color: #1a1a1a;
             color: #f5e1b5;
             text-align: center;
             padding: 10px;
         }
+
+        footer a {
+            color: #ffd700; /* Золотистий колір посилань */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #f5e1b5; /* Кремовий колір при наведенні */
+        }
+
 
     /* Секція із зображенням і текстом */
         .section-with-image {
