@@ -130,6 +130,34 @@
                 }
             }
 
+                /* Для екранів шириною до 768px (мобільні пристрої) */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .section-with-image {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .fullscreen-video {
+                height: auto; /* Зберігає пропорції відео */
+            }
+        }
+        
+        /* Для екранів шириною до 480px (малі мобільні пристрої) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px; /* Зменшення шрифта для маленьких екранів */
+            }
+            .text-justify {
+                font-size: 16px;
+            }
+            .scroll-down {
+                font-size: 20px; /* Зменшення розміру кнопки */
+            }
+        }
+        
         /* Fullscreen Video стилізація відео */
         .fullscreen-video {
             position: relative;
