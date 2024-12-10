@@ -117,40 +117,6 @@
             color: #1a1a1a;
         }
         
-        /* Контейнер кнопки */
-        .more-info-container {
-            position: absolute;
-            top: 70px; /* Налаштуйте, щоб було після смуги навігації */
-            left: 20px; /* Відступ від лівого краю */
-            display: flex;
-            align-items: center;
-            border: 2px solid #d4af37; /* Рамка */
-            border-radius: 8px;
-            padding: 10px 15px;
-            background-color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        
-        /* Стиль кнопки при наведенні */
-        .more-info-container:hover {
-            background-color: #f4f4f4;
-            transform: scale(1.05);
-        }
-        
-        /* Стрілка */
-        .more-info-arrow {
-            margin-right: 8px; /* Відступ між стрілкою та текстом */
-            font-size: 20px; /* Розмір стрілки */
-        }
-        
-        /* Текст */
-        .more-info-text {
-            font-size: 16px;
-            color: #333;
-            font-weight: bold;
-        }
-        
     /* Друга секція із зображенням і текстом загальне */
         .section-with-image {
             display: flex;
@@ -199,7 +165,41 @@
             font-weight: bold; /* Зміцнює ефект виділення */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Легка тінь для більшої глибини */
         }
-
+            
+            /* Контейнер кнопки */
+        .more-info-container {
+            position: absolute;
+            top: 70px; /* Налаштуйте, щоб було після смуги навігації */
+            left: 20px; /* Відступ від лівого краю */
+            display: flex;
+            align-items: center;
+            border: 2px solid #d4af37; /* Рамка */
+            border-radius: 8px;
+            padding: 10px 15px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        /* Стиль кнопки при наведенні */
+        .more-info-container:hover {
+            background-color: #f4f4f4;
+            transform: scale(1.05);
+        }
+        
+        /* Стрілка */
+        .more-info-arrow {
+            margin-right: 8px; /* Відступ між стрілкою та текстом */
+            font-size: 20px; /* Розмір стрілки */
+        }
+        
+        /* Текст */
+        .more-info-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+        
         /* Загальний стиль для третьої секції */
     .section-with-content {
         margin: 50px auto;
@@ -447,7 +447,6 @@
     <div class="fullscreen-video">
         <video autoplay muted loop>
             <source src="https://maksymsharan.github.io/Video-2.mp4" type="video/mp4"/>
-            Ваш браузер не підтримує HTML5 відео.
         </video>
         <div class="overlay-text">Переломні Роки України</div>
         <div class="scroll-down" onclick="scrollToContent()">
@@ -477,20 +476,8 @@
             <!-- Секретний текст -->
             <div id="hidden-text" style="display: none; margin-top: 20px; padding: 10px;">
                 <!-- Сюди додамо текст пізніше -->
-            </div>
-            
-                // Функція для розгортання/згортання тексту
-            function toggleText() {
-                const hiddenText = document.getElementById("hidden-text");
-                const arrow = document.querySelector(".more-info-arrow");
-                if (hiddenText.style.display === "none") {
-                    hiddenText.style.display = "block";
-                    arrow.textContent = "↑"; // Змінюємо стрілку на вгору
-                } else {
-                    hiddenText.style.display = "none";
-                    arrow.textContent = "↓"; // Змінюємо стрілку на вниз
-                }
-            }
+        </div>
+
     
     <section id="elections-1991" class="section-with-content">
     <div class="content-container">
