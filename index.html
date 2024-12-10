@@ -116,7 +116,41 @@
             background-color: #ffd700;
             color: #1a1a1a;
         }
-
+        
+        /* Контейнер кнопки */
+        .more-info-container {
+            position: absolute;
+            top: 70px; /* Налаштуйте, щоб було після смуги навігації */
+            left: 20px; /* Відступ від лівого краю */
+            display: flex;
+            align-items: center;
+            border: 2px solid #d4af37; /* Рамка */
+            border-radius: 8px;
+            padding: 10px 15px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        /* Стиль кнопки при наведенні */
+        .more-info-container:hover {
+            background-color: #f4f4f4;
+            transform: scale(1.05);
+        }
+        
+        /* Стрілка */
+        .more-info-arrow {
+            margin-right: 8px; /* Відступ між стрілкою та текстом */
+            font-size: 20px; /* Розмір стрілки */
+        }
+        
+        /* Текст */
+        .more-info-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+        
     /* Друга секція із зображенням і текстом загальне */
         .section-with-image {
             display: flex;
@@ -433,7 +467,31 @@
             </ul>
         </nav>
     </header>
-
+        
+        <!-- Контейнер кнопки -->
+            <div class="more-info-container" onclick="toggleText()">
+                <span class="more-info-arrow">↓</span>
+                <span class="more-info-text">Дізнатися більше</span>
+            </div>
+            
+            <!-- Секретний текст -->
+            <div id="hidden-text" style="display: none; margin-top: 20px; padding: 10px;">
+                <!-- Сюди додамо текст пізніше -->
+            </div>
+            
+                // Функція для розгортання/згортання тексту
+            function toggleText() {
+                const hiddenText = document.getElementById("hidden-text");
+                const arrow = document.querySelector(".more-info-arrow");
+                if (hiddenText.style.display === "none") {
+                    hiddenText.style.display = "block";
+                    arrow.textContent = "↑"; // Змінюємо стрілку на вгору
+                } else {
+                    hiddenText.style.display = "none";
+                    arrow.textContent = "↓"; // Змінюємо стрілку на вниз
+                }
+            }
+    
     <section id="elections-1991" class="section-with-content">
     <div class="content-container">
         <div class="text-content">
