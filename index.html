@@ -118,6 +118,75 @@
             color: #1a1a1a;
         }
 
+        /* Стилі контейнера */
+        .audio-player {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Стилі значка кнопки */
+        .audio-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .audio-icon #iconShape {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 16px; /* Стрілка */
+            border-color: transparent transparent transparent #ad7c32;
+            transition: all 0.3s;
+        }
+        
+        .audio-icon.pause #iconShape {
+            width: 16px; /* Дві вертикальні лінії */
+            height: 16px;
+            background-color: #ad7c32;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .audio-icon.pause #iconShape::before,
+        .audio-icon.pause #iconShape::after {
+            content: '';
+            width: 5px;
+            height: 16px;
+            background-color: #ad7c32;
+            position: absolute;
+        }
+        
+        .audio-icon.pause #iconShape::before {
+            left: 0;
+        }
+        
+        .audio-icon.pause #iconShape::after {
+            right: 0;
+        }
+        
+        /* Напис поруч із кнопкою */
+        .audio-label {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        /* Таймер */
+        .audio-timer {
+            font-size: 16px;
+            color: #666;
+        }
+
         .full-width-block {
             background-color: black; /* Чорний фон */
             color: #ad7c32; /* Колір тексту */
@@ -381,6 +450,63 @@
             </ul>
         </nav>
     </header>
+
+    <div class="audio-player">
+        <div class="audio-icon" id="playPauseButton" onclick="toggleAudio()">
+            <div id="iconShape"></div>
+        </div>
+        <span class="audio-label">Прослухати цю статтю</span>
+        <span class="audio-timer" id="audioTimer">02:30</span>
+        <audio id="audioFile" src="audio/sample-audio.mp3"></audio>
+    </div>
+
+    <script>
+        const audio = document.getElementById("audioFile");
+        const playPauseButton = document.getElementById("playPauseButton");
+        const timer = document.getElementById("audioTimer");
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.classList.add("pause");
+                startTimer();
+            } else {
+                audio.pause();
+                playPauseButton.classList.remove("pause");
+                clearInterval(timerInterval);
+            }
+        }
+
+        let timerInterval;
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            let duration = Math.floor(audio.duration) || 150;
+            timer.textContent = formatTime(duration);
+
+            timerInterval = setInterval(() => {
+                if (duration > 0) {
+                    duration -= 1;
+                    timer.textContent = formatTime(duration);
+                } else {
+                    clearInterval(timerInterval);
+                    audio.pause();
+                    playPauseButton.classList.remove("pause");
+                }
+            }, 1000);
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+        }
+
+        audio.addEventListener("ended", () => {
+            playPauseButton.classList.remove("pause");
+            clearInterval(timerInterval);
+        });
+    </script>
     
     <div class="full-width-block">
         <div class="content">
