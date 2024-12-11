@@ -465,23 +465,25 @@
         const playPauseButton = document.getElementById("playPauseButton");
         const timer = document.getElementById("audioTimer");
 
+        // Перемикання стану аудіо
         function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-                playPauseButton.classList.add("pause");
-                startTimer();
+            if (audio.paused || audio.ended) {
+                audio.play(); // Запускаємо аудіо
+                playPauseButton.classList.add("pause"); // Додаємо клас для кнопки
+                startTimer(); // Запускаємо таймер
             } else {
-                audio.pause();
-                playPauseButton.classList.remove("pause");
-                clearInterval(timerInterval);
+                audio.pause(); // Ставимо на паузу
+                playPauseButton.classList.remove("pause"); // Видаляємо клас для кнопки
+                clearInterval(timerInterval); // Зупиняємо таймер
             }
         }
 
+        // Логіка для оновлення таймера
         let timerInterval;
 
         function startTimer() {
             clearInterval(timerInterval);
-            let duration = Math.floor(audio.duration) || 150;
+            let duration = Math.floor(audio.duration) - Math.floor(audio.currentTime);
             timer.textContent = formatTime(duration);
 
             timerInterval = setInterval(() => {
@@ -490,22 +492,27 @@
                     timer.textContent = formatTime(duration);
                 } else {
                     clearInterval(timerInterval);
-                    audio.pause();
-                    playPauseButton.classList.remove("pause");
+                    resetPlayer(); // Скидаємо до початкового стану після завершення
                 }
             }, 1000);
         }
 
+        // Форматування часу в хвилини:секунди
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = seconds % 60;
             return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
         }
 
-        audio.addEventListener("ended", () => {
-            playPauseButton.classList.remove("pause");
-            clearInterval(timerInterval);
-        });
+        // Скидання плеєра до початкового стану
+        function resetPlayer() {
+            playPauseButton.classList.remove("pause"); // Повертаємо значок "грати"
+            timer.textContent = formatTime(Math.floor(audio.duration)); // Встановлюємо початковий час
+            audio.currentTime = 0; // Скидаємо позицію відтворення
+        }
+
+        // Подія: закінчення аудіо
+        audio.addEventListener("ended", resetPlayer);
     </script>
     
     <div class="full-width-block">
