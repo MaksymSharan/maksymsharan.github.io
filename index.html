@@ -187,6 +187,7 @@
             color: #666;
         }
 
+        // *Секція чорного фону і золотого тексту* //
         .full-width-block {
             background-color: black; /* Чорний фон */
             color: #ad7c32; /* Колір тексту */
@@ -454,73 +455,63 @@
     <div class="audio-player">
         <div class="audio-icon" id="playPauseButton" onclick="toggleAudio()">
             <div id="iconShape"></div>
-        </div>
+    </div>
+    
         <span class="audio-label">Прослухати цю статтю</span>
         <span class="audio-timer" id="audioTimer">02:30</span>
         <audio id="audioFile" src="audio/sample-audio.mp3"></audio>
     </div>
 
-    <script>
-        const audio = document.getElementById("audioFile");
+            const audio = document.getElementById("audioFile");
         const playPauseButton = document.getElementById("playPauseButton");
         const timer = document.getElementById("audioTimer");
-
-        // Перемикання стану аудіо
+        
+        // Функція для перемикання між "грати" і "пауза"
         function toggleAudio() {
-            if (audio.paused || audio.ended) {
-                audio.play(); // Запускаємо аудіо
-                playPauseButton.classList.add("pause"); // Додаємо клас для кнопки
-                startTimer(); // Запускаємо таймер
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.classList.add("pause");
+                startTimer();
             } else {
-                audio.pause(); // Ставимо на паузу
-                playPauseButton.classList.remove("pause"); // Видаляємо клас для кнопки
-                clearInterval(timerInterval); // Зупиняємо таймер
+                audio.pause();
+                playPauseButton.classList.remove("pause");
+                clearInterval(timerInterval);
             }
         }
-
-        // Логіка для оновлення таймера
+        
+        // Функція для оновлення таймера
         let timerInterval;
-
+        
         function startTimer() {
             clearInterval(timerInterval);
-            let duration = Math.floor(audio.duration) - Math.floor(audio.currentTime);
+        
+            let duration = Math.floor(audio.duration) || 150; // Якщо тривалість невідома, ставимо 2:30
             timer.textContent = formatTime(duration);
-
+        
             timerInterval = setInterval(() => {
                 if (duration > 0) {
                     duration -= 1;
                     timer.textContent = formatTime(duration);
                 } else {
                     clearInterval(timerInterval);
-                    resetPlayer(); // Скидаємо до початкового стану після завершення
+                    audio.pause();
+                    playPauseButton.classList.remove("pause");
                 }
             }, 1000);
         }
-
-        // Форматування часу в хвилини:секунди
+        
+        // Форматування часу у хвилини:секунди
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = seconds % 60;
             return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
         }
-
-        // Скидання плеєра до початкового стану
-        function resetPlayer() {
-            playPauseButton.classList.remove("pause"); // Повертаємо значок "грати"
-            timer.textContent = formatTime(Math.floor(audio.duration)); // Встановлюємо початковий час
-            audio.currentTime = 0; // Скидаємо позицію відтворення
-        }
-
-        // Подія: закінчення аудіо
-        audio.addEventListener("ended", resetPlayer);
-    </script>
-    
-    <div class="full-width-block">
-        <div class="content">
-            <p><i>«На початку було Слово, і Слово було у Бога, і Слово було Бог»</i> – так відкривається Біблія, описуючи народження світу. Але якщо би 1990-ті в Україні мали свою Книгу Буття, їх перший вірш звучав би інакше: <i>«На початку був хаос»</i>. У цих словах є уся сутність того часу: стара система різко згасала, а новий демократичний світ тільки-тільки почав народжуватись. Це був час дуже великих очікувань і ще більших розчарувань. Після розвалу Радянського Союзу незалежність подарувала українцям надію, але дуже швидко прийшла невизначеність. У хаосі 90-х років почали формуватись тріщини, які згодом перетворилися на безодні.</p>
-            <p>1990-ті стали часом, коли нова держава залишилася без чіткої відповіді на питання: хто ми і куди йдемо? Це був період, коли у вирі кримінальної романтики та політичних інтриг губилася сама ідея справжньої свободи. Золото незалежності змішувалося з болотом корупції, і ціною цього стали людські долі, соціальна дезінтеграція, а згодом, через три десятки років – кров. Кожен незакритий рахунок 90-х, кожне недороблене рішення і кожна проігнорована тріщина створювали передумови для сьогоднішньої боротьби за виживання нації. Це розслідування є всього лише спробою зануритися у коріння сучасної трагедії. Ми пройдемо крізь архіви, свідчення очевидців та історичні документи, щоб відповісти на запитання: якою ціною народжувалася нова Україна та які тіні з того часу досі стоять за нашими спинами?</p>
-       </div> 
-    </div>
+        
+        // Скидання кнопки після завершення аудіо
+        audio.addEventListener("ended", () => {
+            playPauseButton.classList.remove("pause");
+            clearInterval(timerInterval);
+        });
     
     <section id="elections-1991" class="section-with-content">
     <div class="content-container">
