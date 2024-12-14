@@ -66,6 +66,13 @@
             font-size: 14px;
         }
 
+        /* Загальні стилі */
+        video {
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+
         /* Анімація підстрибування*/
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
@@ -89,53 +96,86 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Загальні стилі */
-video {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
-
-/* Адаптація для екранів до 767px */
-@media (max-width: 767px) {
-  video {
-    width: 100%; /* Переконуємось, що відео займає всю ширину */
-    height: auto;
-  }
-}
-
-/* Адаптація для екранів до 1199px */
-@media (max-width: 1199px) {
-  video {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Адаптація для екранів до 768px */
-@media (max-width: 768px) {
-  video {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Адаптація для екранів до 1200px */
-@media (max-width: 1200px) {
-  video {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Адаптація для екранів від 1201px */
-@media (min-width: 1201px) {
-  video {
-    width: 80%; /* Для більших екранів можна зменшити ширину відео */
-    margin: 0 auto;
-    height: auto;
-  }
-}
+        /* Медіа-запити для адаптації */
+    @media (max-width: 767px) {
+        .overlay-text {
+            font-size: 24px; /* Зменшення шрифта на мобільних пристроях */
+            padding: 10px;
+        }
+    
+        .scroll-down {
+            font-size: 20px; /* Зменшення розміру іконки */
+            bottom: 10px;
+        }
+    
+        .scroll-down span {
+            font-size: 12px; /* Зменшення шрифта тексту */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .overlay-text {
+            font-size: 28px; /* Зменшення шрифта для планшетів */
+        }
+    
+        .scroll-down {
+            font-size: 22px;
+        }
+    
+        .scroll-down span {
+            font-size: 13px;
+        }
+    }
+    
+    @media (max-width: 1199px) {
+        .overlay-text {
+            font-size: 30px; /* Легке зменшення для середніх екранів */
+        }
+    
+        .scroll-down {
+            font-size: 23px;
+        }
+    
+        .scroll-down span {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        .fullscreen-video {
+            height: 80vh; /* Зменшення висоти відео для великих екранів */
+        }
+    
+        .overlay-text {
+            font-size: 32px; /* Збільшення шрифта для великих екранів */
+        }
+    
+        .scroll-down {
+            font-size: 24px;
+        }
+    
+        .scroll-down span {
+            font-size: 14px;
+        }
+    }
+    
+    @media (min-width: 1201px) {
+        .fullscreen-video {
+            height: 100vh; /* Відновлення стандартної висоти відео для великих екранів */
+        }
+    
+        .overlay-text {
+            font-size: 36px; /* Стандартний розмір шрифта */
+        }
+    
+        .scroll-down {
+            font-size: 24px;
+        }
+    
+        .scroll-down span {
+            font-size: 14px;
+        }
+    }
         
         /* Смуга навігації */
         nav ul {
@@ -205,6 +245,118 @@ video {
             width: 150px; /* Ширина фото */
             height: 30px; /* Автоматична висота */
             border-radius: 8px; /* Злегка округлені краї */
+        }
+
+        /* Для екранів до 767px */
+        @media (max-width: 767px) {
+            nav ul {
+                flex-direction: column; /* Смуга навігації буде вертикальною */
+                gap: 20px; /* Зменшуємо відстань між елементами */
+            }
+        
+            nav ul li a {
+                font-size: 16px; /* Зменшення шрифта для мобільних пристроїв */
+                padding: 8px 15px; /* Зменшення відступів */
+            }
+        
+            .image-container img {
+                width: 120px; /* Зменшення ширини фото */
+                height: 24px; /* Зменшення висоти */
+            }
+        
+            .full-width-block {
+                font-size: 16px; /* Зменшення шрифта для мобільних пристроїв */
+                padding: 20px; /* Зменшення відступів */
+            }
+        }
+
+        /* Для екранів до 768px */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Вертикальне вирівнювання навігації */
+                gap: 25px;
+            }
+        
+            nav ul li a {
+                font-size: 18px; /* Зменшення шрифта */
+                padding: 8px 18px; /* Зменшення відступів */
+            }
+        
+            .image-container img {
+                width: 130px; /* Зменшення ширини фото */
+                height: 28px; /* Зменшення висоти */
+            }
+        
+            .full-width-block {
+                font-size: 17px; /* Зменшення шрифта */
+                padding: 25px; /* Зменшення відступів */
+            }
+        }
+
+        /* Для екранів до 1199px */
+        @media (max-width: 1199px) {
+            nav ul {
+                gap: 25px; /* Помірна відстань між елементами */
+            }
+        
+            nav ul li a {
+                font-size: 19px; /* Зменшення шрифта для середніх екранів */
+                padding: 9px 18px;
+            }
+        
+            .image-container img {
+                width: 140px; /* Зменшення ширини фото */
+                height: 30px; /* Автоматична висота */
+            }
+        
+            .full-width-block {
+                font-size: 18px; /* Нормальний розмір шрифта */
+                padding: 28px;
+            }
+        }
+
+        /* Для екранів до 1200px */
+        @media (max-width: 1200px) {
+            nav ul {
+                gap: 20px; /* Зменшення відстані між елементами */
+            }
+        
+            nav ul li a {
+                font-size: 18px; /* Зменшення шрифта */
+                padding: 8px 16px;
+            }
+        
+            .image-container img {
+                width: 140px; /* Зменшення ширини фото */
+                height: 30px; /* Автоматична висота */
+            }
+        
+            .full-width-block {
+                font-size: 17px; /* Зменшення шрифта */
+                padding: 25px;
+            }
+        }
+
+        /* Для екранів від 1201px */
+        @media (min-width: 1201px) {
+            nav ul {
+                gap: 30px; /* Стандартна відстань */
+            }
+        
+            nav ul li a {
+                font-size: 20px; /* Стандартний розмір шрифта */
+                padding: 10px 20px;
+            }
+        
+            .image-container img {
+                width: 150px; /* Стандартна ширина фото */
+                height: 30px;
+            }
+        
+            .full-width-block {
+                font-size: 18px; /* Стандартний розмір шрифта */
+                padding: 30px;
+            }
         }
         
         /* Секція "Вибори 1991-го" */
@@ -303,6 +455,160 @@ video {
             height: 30px; /* Автоматична висота */
             border-radius: 8px; /* Злегка округлені краї */
     }
+
+    /* Медіа-запити для адаптації */
+    /* Для екранів до 767px */
+    @media (max-width: 767px) {
+        .content-container {
+            flex-direction: column; /* Вертикальне вирівнювання для мобільних пристроїв */
+            gap: 15px;
+        }
+    
+        .text-content {
+            font-size: 16px; /* Зменшення шрифта */
+            line-height: 1.5; /* Зменшення міжрядкового інтервалу */
+        }
+    
+        .image-content img {
+            max-width: 250px; /* Зменшення ширини зображення */
+        }
+    
+        .photo-container img {
+            width: 100%; /* Ширина фотографії на всю доступну ширину */
+            height: auto;
+        }
+    
+        .gallery-text {
+            font-size: 16px; /* Зменшення шрифта */
+        }
+    
+        .highlighted-link {
+            font-size: 14px; /* Зменшення шрифта для посилання */
+        }
+    
+        .image-container img {
+            width: 120px; /* Зменшення ширини зображення */
+            height: 24px; /* Зменшення висоти */
+        }
+    }
+    
+    /* Для екранів до 768px */
+    @media (max-width: 768px) {
+        .content-container {
+            flex-direction: column; /* Вертикальне вирівнювання */
+            gap: 18px;
+        }
+    
+        .text-content {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+    
+        .image-content img {
+            max-width: 270px;
+        }
+    
+        .photo-container img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .gallery-text {
+            font-size: 17px;
+        }
+    
+        .highlighted-link {
+            font-size: 15px;
+        }
+    
+        .image-container img {
+            width: 130px; 
+            height: 26px; 
+        }
+    }
+    
+    /* Для екранів до 1199px */
+    @media (max-width: 1199px) {
+        .content-container {
+            flex-direction: row; /* Оновлюємо для ширших екранів */
+            gap: 20px;
+        }
+    
+        .text-content {
+            font-size: 18px;
+        }
+    
+        .image-content img {
+            max-width: 300px;
+        }
+    
+        .photo-container img {
+            width: 400px;
+        }
+    
+        .gallery-text {
+            font-size: 18px;
+        }
+    
+        .highlighted-link {
+            font-size: 16px;
+        }
+    }
+    
+    /* Для екранів до 1200px */
+    @media (max-width: 1200px) {
+        .content-container {
+            gap: 18px;
+        }
+    
+        .text-content {
+            font-size: 17px;
+        }
+    
+        .image-content img {
+            max-width: 280px;
+        }
+    
+        .photo-container img {
+            width: 450px;
+        }
+    
+        .gallery-text {
+            font-size: 17px;
+        }
+    
+        .highlighted-link {
+            font-size: 15px;
+        }
+    }
+    
+    /* Для екранів від 1201px */
+    @media (min-width: 1201px) {
+        .content-container {
+            flex-direction: row; /* Горизонтальне вирівнювання для великих екранів */
+            gap: 20px;
+        }
+    
+        .text-content {
+            font-size: 18px;
+        }
+    
+        .image-content img {
+            max-width: 300px;
+        }
+    
+        .photo-container img {
+            width: 500px;
+        }
+    
+        .gallery-text {
+            font-size: 18px;
+        }
+    
+        .highlighted-link {
+            font-size: 17px;
+        }
+    }
         
         /* Секція "Добровільне ядерне роззброєння" */
         #nuclear-disarmament {
@@ -369,6 +675,98 @@ video {
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+        /* Медіа-запити для адаптації */
+        
+        /* Для екранів до 767px */
+        @media (max-width: 767px) {
+            #nuclear-disarmament {
+                font-size: 16px; /* Зменшення шрифта */
+                line-height: 1.5;
+            }
+        
+            .photo-container img {
+                width: 100%; /* Ширина фотографії на всю доступну ширину */
+                height: auto;
+            }
+        
+            .image-container img {
+                width: 120px; /* Зменшення ширини зображення */
+                height: 24px; /* Зменшення висоти */
+            }
+        
+            blockquote {
+                font-size: 14px; /* Зменшення шрифта в цитатах */
+            }
+        }
+        
+        /* Для екранів до 768px */
+        @media (max-width: 768px) {
+            #nuclear-disarmament {
+                font-size: 17px;
+            }
+        
+            .photo-container img {
+                width: 100%;
+            }
+        
+            .image-container img {
+                width: 130px;
+                height: 26px;
+            }
+        
+            blockquote {
+                font-size: 15px;
+            }
+        }
+        
+        /* Для екранів до 1199px */
+        @media (max-width: 1199px) {
+            #nuclear-disarmament {
+                font-size: 17px;
+            }
+        
+            .photo-container img {
+                width: 450px;
+            }
+        
+            .image-container img {
+                width: 140px;
+                height: 28px;
+            }
+        }
+        
+        /* Для екранів до 1200px */
+        @media (max-width: 1200px) {
+            #nuclear-disarmament {
+                font-size: 17px;
+            }
+        
+            .photo-container img {
+                width: 450px;
+            }
+        
+            .image-container img {
+                width: 140px;
+                height: 28px;
+            }
+        }
+        
+        /* Для екранів від 1201px */
+        @media (min-width: 1201px) {
+            #nuclear-disarmament {
+                font-size: 18px;
+            }
+        
+            .photo-container img {
+                width: 500px;
+            }
+        
+            .image-container img {
+                width: 150px;
+                height: 30px;
+            }
+        }
         
     </style>
     <script>
