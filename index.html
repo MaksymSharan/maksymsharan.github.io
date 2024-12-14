@@ -88,6 +88,54 @@
             z-index: 1000;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Загальні стилі */
+video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Адаптація для екранів до 767px */
+@media (max-width: 767px) {
+  video {
+    width: 100%; /* Переконуємось, що відео займає всю ширину */
+    height: auto;
+  }
+}
+
+/* Адаптація для екранів до 1199px */
+@media (max-width: 1199px) {
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Адаптація для екранів до 768px */
+@media (max-width: 768px) {
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Адаптація для екранів до 1200px */
+@media (max-width: 1200px) {
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Адаптація для екранів від 1201px */
+@media (min-width: 1201px) {
+  video {
+    width: 80%; /* Для більших екранів можна зменшити ширину відео */
+    margin: 0 auto;
+    height: auto;
+  }
+}
         
         /* Смуга навігації */
         nav ul {
@@ -322,103 +370,6 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
         
-    /* Адаптація для планшетів (до 768px) */
-@media (max-width: 768px) {
-    /* Навігація у два ряди */
-    nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    nav ul li {
-        width: 45%;
-        text-align: center;
-    }
-
-    /* Відео: зменшення висоти */
-    .fullscreen-video {
-        height: 70vh;
-    }
-
-    .fullscreen-video video {
-        object-fit: cover;
-    }
-
-    .overlay-text {
-        font-size: 28px;
-        padding: 15px;
-    }
-
-    /* Секції з текстом та зображеннями */
-    .section-with-image {
-        flex-direction: column;
-    }
-
-    .section-with-image img {
-        max-width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .section-with-image .text {
-        margin-left: 0;
-        text-align: justify;
-    }
-
-    /* Секція "Вибори 1991-го" */
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .content-container .text-content {
-        margin-bottom: 20px;
-        text-align: justify;
-    }
-
-    .content-container .image-content img {
-        max-width: 100%;
-    }
-}
-
-/* Адаптація для смартфонів (до 576px) */
-@media (max-width: 576px) {
-    /* Навігація у два ряди */
-    nav ul {
-        gap: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    /* Відео: компактне відображення */
-    .fullscreen-video {
-        height: 60vh;
-    }
-
-    /* Секції: повністю вертикальні */
-    .section-with-image {
-        padding: 15px;
-    }
-
-    .section-with-image img {
-        max-width: 100%;
-        margin: 0 0 15px;
-    }
-
-    .section-with-image .text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .content-container {
-        gap: 15px;
-    }
-
-    .content-container .text-content {
-        font-size: 16px;
-    }
-}
     </style>
     <script>
         // Scroll Animation Script
