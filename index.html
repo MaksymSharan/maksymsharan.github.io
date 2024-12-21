@@ -676,6 +676,38 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+.info-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #ad7c32;
+      border-radius: 8px;
+      padding: 10px 20px;
+      width: fit-content;
+      margin: 20px auto;
+      font-family: "Times New Roman", Times, serif;
+      color: #ad7c32;
+      cursor: pointer;
+      position: relative;
+    }
+    .info-box:hover {
+      background-color: #f9f5ef;
+    }
+    .info-box .arrow {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .hidden-content {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+      font-size: 14px;
+      text-align: center;
+    }
+    .info-box.active + .hidden-content {
+      display: block;
+    }
+        
         /* Медіа-запити для адаптації */
         
         /* Для екранів до 767px */
@@ -886,6 +918,22 @@
                     <img src="https://maksymsharan.github.io/Dec-2.png" alt="Декларація" class="photo" onclick="openModal(0)">
                 </div>
             </div>
+
+  <div class="info-box" onclick="toggleContent(this)">
+    <span class="arrow">↓</span>
+    <span>Дізнатися більше</span>
+  </div>
+  <div class="hidden-content">
+    <!-- Тут з'явиться текст, який ви подасте пізніше -->
+    Приклад прихованого тексту.
+  </div>
+
+  <script>
+    function toggleContent(element) {
+      element.classList.toggle('active');
+    }
+  </script>
+    
     </section>
 
     <!-- Вставка фото -->
