@@ -3,108 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preambula – Ядерне роззброєння</title>
+  <title>Preambula</title>
   <style>
+    :root {
+      --bg-light: #ececec;
+      --text-light: #333;
+      --bg-dark: #121212;
+      --text-dark: #f0f0f0;
+      --card-bg-light: white;
+      --card-bg-dark: #1e1e1e;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
 
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    body.light {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 5px 0;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #fff;
+    .title-main {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
-    .subheading {
+    .header-bar {
+      background: linear-gradient(to right, blue, yellow);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
       text-transform: uppercase;
-      color: #ccc;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      letter-spacing: 1px;
     }
 
-    .hero-image {
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    button, select {
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .materials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .material {
+      background-color: var(--card-bg-dark);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      text-align: center;
+    }
+
+    body.light .material {
+      background-color: var(--card-bg-light);
+    }
+
+    .material:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .material img {
       width: 100%;
-      max-height: 60vh;
+      height: 300px;
       object-fit: cover;
       display: block;
     }
 
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .material-content {
+      padding: 20px;
     }
 
-    article h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #f5f5f5;
+    .material-content h2 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
     }
 
-    article p {
-      line-height: 1.7;
-      font-size: 1.1rem;
-      margin-bottom: 1.2rem;
+    .material-content p {
+      margin: 0 0 20px;
+      line-height: 1.6;
     }
 
-    footer {
-      margin-top: auto;
-      background-color: #000;
-      color: #aaa;
+    .material-content a {
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+
+    .material-content a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background: #000;
+      color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 20px 0;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .subheading {
-        font-size: 1rem;
-      }
+      margin-top: auto;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Preambula</h1>
-    <div class="subheading">Ядерне роззброєння України</div>
-  </header>
+<body class="dark">
+  <div class="content">
+    <div class="header">
+      <h1 class="title-main">Preambula</h1>
+    </div>
 
-  <img src="https://maksymsharan.github.io/Yaderka.png" alt="Ядерне роззброєння" class="hero-image" />
+    <div class="header-bar" id="subtitle">Переломні роки України</div>
 
-  <div class="container">
-    <article>
-      <h2>Ціна вибору: як Україна відмовилась від ядерної зброї</h2>
-      <p>
-        У 1991 році Україна стала однією з найбільших ядерних держав світу. Понад 1700 стратегічних боєголовок, ракети великої дальності, та величезна відповідальність.
-      </p>
-      <p>
-        Проте вже до 1994 року було прийнято рішення, яке назавжди змінить геополітичну вагу країни — повне ядерне роззброєння. Угоди, підписані в Будапешті, обіцяли безпеку, суверенітет і повагу. Але що ми отримали натомість?
-      </p>
-      <p>
-        Це розслідування — не лише про зброю. Це історія про довіру, дипломатію та стратегічні помилки, наслідки яких Україна відчуває й сьогодні.
-      </p>
-    </article>
+    <div class="controls">
+      <button onclick="toggleTheme()" id="themeBtn">Тема</button>
+      <select onchange="changeLang(this.value)" id="langSelector">
+        <option value="ua">UA</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+
+    <div class="materials">
+      <div class="material">
+        <a href="https://maksymsharan.github.io/">
+          <img src="https://maksymsharan.github.io/1/Spoty.png" alt="Матеріал 1" />
+        </a>
+        <div class="material-content">
+          <h2 data-ua="Вибори 1991 та ядерне роззброєння" data-en="1991 Elections and Nuclear Disarmament"></h2>
+          <p data-ua="Це був початок великого шляху незалежної України" data-en="The beginning of Ukraine's independent journey."></p>
+          <a href="https://maksymsharan.github.io/" data-ua="Читати більше" data-en="Read more"></a>
+        </div>
+      </div>
+
+      <div class="material">
+        <a href="https://maksymsharan.github.io/2/">
+          <img src="https://maksymsharan.github.io/1/Klan.png" alt="Матеріал 2" />
+        </a>
+        <div class="material-content">
+          <h2 data-ua="Київська сімка" data-en="Kyiv Seven"></h2>
+          <p data-ua="Економічний хаос породив нові виклики для країни" data-en="Economic chaos brought new challenges to the nation."></p>
+          <a href="https://maksymsharan.github.io/2/" data-ua="Читати більше" data-en="Read more"></a>
+        </div>
+      </div>
+
+      <div class="material">
+        <a href="https://maksymsharan.github.io/4/">
+          <img src="https://maksymsharan.github.io/4/Ulia.png" alt="Газова баронеса" />
+        </a>
+        <div class="material-content">
+          <h2 data-ua="Газова баронеса" data-en="The Gas Baroness"></h2>
+          <p data-ua="Політичний злет, енергетичні ігри та тіньовий вплив однієї з найвідоміших постатей 1990-х." data-en="A political rise, energy games, and shadowy influence of one of the 1990s' key figures."></p>
+          <a href="https://maksymsharan.github.io/4/" data-ua="Читати більше" data-en="Read more"></a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <footer>
-    2025 &copy; Preambula. Усі права захищено.
-  </footer>
+  <div class="footer">2025 Усі права захищено</div>
+
+  <script>
+    let currentLang = localStorage.getItem("lang") || "ua";
+    let currentTheme = localStorage.getItem("theme") || "dark";
+
+    function updateTexts() {
+      document.querySelectorAll("[data-ua]").forEach(el => {
+        el.innerText = el.dataset[currentLang];
+      });
+    }
+
+    function changeLang(lang) {
+      currentLang = lang;
+      localStorage.setItem("lang", lang);
+      document.getElementById("langSelector").value = lang;
+      updateTexts();
+      document.getElementById("themeBtn").textContent = lang === "ua" ? "Тема" : "Theme";
+      document.getElementById("subtitle").textContent = lang === "ua"
+        ? "Переломні роки України"
+        : "Ukraine's Turning Years";
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("light");
+      const newTheme = body.classList.contains("light") ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+    }
+
+    // Init on load
+    document.addEventListener("DOMContentLoaded", () => {
+      if (currentTheme === "light") {
+        document.body.classList.add("light");
+      }
+      changeLang(currentLang);
+    });
+  </script>
 </body>
 </html>
